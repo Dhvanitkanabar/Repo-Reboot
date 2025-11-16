@@ -851,3 +851,401 @@ img {
     margin-top: 10px;
     line-height: 1.5;
 }
+/* -----------------------------------
+    RESPONSIVE - ALL DEVICES
+----------------------------------- */
+
+/* Tablets & Medium screens */
+@media (max-width: 900px) {
+
+    /* Navbar - stack links if needed */
+    .top-nav {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 15px 20px;
+        justify-content: center;
+    }
+
+    /* Footer - stack columns */
+    .footer-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-newsletter form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+
+    /* Hero section adjustments */
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Download app section */
+    .download-inner {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+
+    /* Text scaling */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.4rem; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p, .lead { font-size: 1rem; }
+    .ready-to-transform-section h2,
+    .how-it-works-section h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Hero & Stats */
+    .hero { gap: 1rem; }
+    .hero .right { flex: 1; max-width: 100%; }
+    .hero-stats { flex-direction: column; gap: 15px; }
+
+    /* Download App */
+    .download-inner { padding: 1.5rem; }
+    .download-inner .phone-mock img { max-width: 180px; }
+    .download-inner .app-ctas { text-align: center; }
+
+    /* How it works section */
+    .steps-grid {
+        grid-template-columns: 1fr; /* stack vertically */
+        gap: 1rem;
+    }
+
+    /* Gallery & Slider */
+    .gallery-grid, .test-grid {
+        grid-template-columns: 1fr; /* stack images/cards */
+        gap: 15px;
+    }
+    .slider-track {
+        padding: 0.5rem 0;
+    }
+
+    /* FAQ Accordion */
+    .faq { padding: 2rem 1rem; }
+    .acc-item { padding: 1rem; }
+
+    /* Footer shapes */
+    .section-shape, .bg-circle { display: none; }
+}
+
+/* Extra small screens (very small phones) */
+@media (max-width: 400px) {
+
+    /* Hero */
+    .hero h1 { font-size: 1.8rem; }
+    .lead { font-size: 0.95rem; }
+    .hero-stats .num { font-size: 1.5rem; }
+
+    /* Download App buttons */
+    .store-btn { font-size: 0.9rem; padding: 10px 16px; }
+
+    /* Step cards */
+    .step-card { padding: 1.2rem 1rem; }
+    .step-card h3 { font-size: 1.1rem; }
+    .step-card p { font-size: 0.85rem; }
+
+    /* CTA button */
+    .ready-to-transform-section .btn { font-size: 1rem; padding: 0.8rem 1.5rem; }
+
+    /* Footer text */
+    .footer-brand h2 { font-size: 1.6rem; }
+    .footer-links h4,
+    .footer-newsletter h4 { font-size: 1rem; }
+}
+
+/* General fixes */
+img, video, iframe { max-width: 100%; height: auto; }
+.container { padding: 1rem; }
+.hero .visual-box {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+    
+    /* Section Structure: Alternating backgrounds */
+    /* .counters, .faq, .ready-to-transform-section {
+        background-color: #fff;
+    } */
+    .collaborations-section, .slider, .how-it-works-section, .download-section, .site-footer {
+        background-color: #f9f9f9;
+    }
+
+    /* Professional "Collaborations" Section */
+    .collaborations-section {
+        padding: 80px 20px;
+        text-align: center;
+    }
+    .collaborations-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .collaborations-section .section-description {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto 50px auto;
+        line-height: 1.6;
+    }
+    .partner-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .partner-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+    }
+    .partner-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .partner-card i { /* Icon for partner type */
+        font-size: 2.5rem;
+        color: #2e8b57;
+        margin-bottom: 20px;
+        width: 50px;
+    }
+    .partner-card h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 10px;
+    }
+    .partner-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+    @media (max-width: 992px) {
+        .partner-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 768px) {
+        .partner-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Professional "Supply Chain" Section */
+    .how-it-works-section {
+        padding: 80px 20px;
+    }
+    main.container section.how-it-works-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center !important; 
+    }
+    main.container section.how-it-works-section .section-description {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 800px;
+        line-height: 1.6;
+        text-align: center !important; 
+        margin: 0 auto 50px auto !important; 
+    }
+    .how-it-works-section .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px; 
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .how-it-works-section .step-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px; 
+        text-align: center;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .how-it-works-section .step-card:hover {
+        transform: translateY(-8px); 
+        box-shadow: 0 12px 30px rgba(0,0,0,0.12); 
+    }
+    .how-it-works-section .step-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #2e8b57;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px; 
+    }
+    .how-it-works-section .step-card h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px !important; 
+    }
+    .how-it-works-section .step-card p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+    }
+    @media (max-width: 992px) {
+        .how-it-works-section .steps-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 768px) {
+        .how-it-works-section .steps-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Professional "Farmer Feedback" Slider */
+    section.slider {
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section.slider h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .slider-track {
+        display: flex;
+        gap: 20px;
+    }
+    .slide {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 35px 30px 30px 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        border: 1px solid #e9e9e9;
+        flex: 0 0 320px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        text-align: left;
+    }
+    .slide:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .slide p {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .slide p::before {
+        content: '“';
+        font-family: Georgia, serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #2e8b57;
+        position: absolute;
+        top: -25px;
+        left: -10px;
+        line-height: 1;
+    }
+    .slide h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #333;
+        text-align: right;
+        margin-top: 15px;
+        position: relative;
+    }
+    .slide h4::before {
+        content: '— ';
+        color: #2e8b57;
+        font-weight: 700;
+    }
+    .slider-controls {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .control-btn {
+        position: relative;
+        top: 0; left: 0; right: 0;
+        transform: none;
+        background-color: #2e8b57;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+    .control-btn:hover {
+        background-color: #256d44;
+        transform: scale(1.1);
+    }
+
+    /* FIX: FAQ Section */
+    section.faq {
+        padding: 80px 20px;
+    }
+    main.container section.faq h2 { /* Changed from h3 */
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333 !important;
+        text-align: center !important;
+        margin-bottom: 50px;
+    }
+    .accordion .acc-head h4 {
+        color: #333 !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+    }
+    .accordion {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+    }

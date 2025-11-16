@@ -1,6 +1,4 @@
-/* -----------------------------------
-    TOP NAVBAR
------------------------------------ */
+
 .top-nav {
     width: 100%;
     padding: 20px 40px;
@@ -19,7 +17,7 @@
     text-decoration: none;
 }
 .top-nav a.active {
-    color: #2ecc71; /* This is from your original file */
+    color: #2ecc71; 
 }
 
 .footer {
@@ -29,7 +27,7 @@
     padding: 25px 0;
     text-align: center;
 }
-/* This is the main footer style you are using */
+
 .site-footer {
     background: linear-gradient(135deg, #1a5d3f, #14914a);
     color: #fff;
@@ -39,7 +37,6 @@
     z-index: 1;
 }
 
-/* Shapes for Footer */
 .site-footer .section-shape {
     position: absolute;
     border-radius: 50%;
@@ -93,7 +90,7 @@
     line-height: 1.5;
 }
 
-/* Quick Links */
+
 .footer-links h4 {
     margin-bottom: 15px;
     font-size: 1.2rem;
@@ -119,7 +116,7 @@
     color: #ffffff;
 }
 
-/* Newsletter */
+
 .footer-newsletter h4 {
     margin-bottom: 10px;
     font-size: 1.2rem;
@@ -162,7 +159,7 @@
     background: #ffffff;
 }
 
-/* Socials */
+
 .footer-socials {
     display: flex;
     gap: 15px;
@@ -179,7 +176,7 @@
     color: #ffffff;
 }
 
-/* Footer Bottom */
+
 .footer-bottom {
     text-align: center;
     padding: 20px 0 0;
@@ -192,9 +189,6 @@
     color: #d4f4dd;
 }
 
-/* -----------------------------------
-    RESPONSIVE
------------------------------------ */
 @media (max-width: 900px) {
     /* Footer */
     .footer-wrapper {
@@ -219,9 +213,6 @@
 
 
 
-/* -----------------------------------
-    GLOBAL RESET + BASE
------------------------------------ */
 * {
     margin: 0;
     padding: 0;
@@ -239,11 +230,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
-    color: #0b3d16; /* Dark green for headings */
+    color: #0b3d16; 
 }
 
 p {
-    color: #4E6B5F; /* Soft green-gray for text */
+    color: #4E6B5F; 
 }
 
 a {
@@ -256,9 +247,7 @@ img {
     height: auto;
 }
 
-/* -----------------------------------
-    FLOATING BACKGROUND CIRCLES
------------------------------------ */
+
 .bg-circle {
     position: absolute;
     border-radius: 50%;
@@ -280,18 +269,12 @@ img {
 
 
 
-/* -----------------------------------
-    CONTAINER
------------------------------------ */
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 2rem 1rem;
 }
 
-/* -----------------------------------
-    REUSABLE BUTTONS
------------------------------------ */
 .btn {
     background: #00b974;
     color: white;
@@ -312,9 +295,6 @@ img {
     opacity: 0.8;
 }
 
-/* -----------------------------------
-    HERO SECTION
------------------------------------ */
 .hero {
     display: flex;
     align-items: center;
@@ -346,7 +326,7 @@ img {
     max-width: 550px;
 }
 
-/* Hero stats */
+
 .hero-stats {
     display: flex;
     gap: 2rem;
@@ -371,9 +351,7 @@ img {
     box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
-/* -----------------------------------
-    GALLERY
------------------------------------ */
+
 .gallery {
     text-align: center;
     margin-top: 3rem;
@@ -391,9 +369,7 @@ img {
     border-radius: 12px;
 }
 
-/* -----------------------------------
-    COUNTERS
------------------------------------ */
+
 .counters {
     display: flex;
     justify-content: space-around;
@@ -421,9 +397,6 @@ img {
     color: #4E6B5F;
 }
 
-/* -----------------------------------
-    SLIDER (SUCCESS STORIES)
------------------------------------ */
 .slider {
     text-align: center;
     margin: 3rem 0;
@@ -455,9 +428,7 @@ img {
     cursor: pointer;
 }
 
-/* -----------------------------------
-    TESTIMONIALS
------------------------------------ */
+
 .testimonials {
     text-align: center;
     margin-bottom: 120px;
@@ -475,14 +446,10 @@ img {
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0,0,0,0.06);
-    /* Added for FPO/Buyer pages */
     text-align: left;
     height: 100%;
 }
 
-/* -----------------------------------
-    FAQ ACCORDION
------------------------------------ */
 .faq {
     max-width: 800px;
     margin: 4rem auto 0;
@@ -528,13 +495,10 @@ img {
     display: none;
 }
 
-/* -----------------------------------
-   1. DOWNLOAD APP (CENTERED)
------------------------------------ */
+
 .download-section {
     margin-top: 5rem;
     padding: 3rem 0;
-    /* Added to center the content */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -543,10 +507,10 @@ img {
 .download-inner {
     display: flex;
     align-items: center;
-    justify-content: center; /* This was updated */
+    justify-content: center; 
     gap: 40px;
-    text-align: center; /* This was added */
-    flex-wrap: wrap; /* Added for responsiveness */
+    text-align: center; 
+    flex-wrap: wrap; 
     background: #fff;
     padding: 2rem;
     border-radius: 20px;
@@ -558,7 +522,7 @@ img {
 .download-inner .phone-mock {
     flex: 1;
     text-align: center;
-    min-width: 180px; /* Ensure image doesn't get too small */
+    min-width: 180px; 
 }
 .download-inner .phone-mock img {
     max-width: 260px;
@@ -568,7 +532,7 @@ img {
 .download-inner .app-ctas {
     flex: 2;
     min-width: 280px;
-    text-align: center; /* Center the text and buttons */
+    text-align: center; 
 }
 .download-inner .app-ctas h2 {
     font-size: 2rem;
@@ -585,7 +549,7 @@ img {
     display: flex;
     gap: 15px;
     margin-top: 15px;
-    justify-content: center; /* This was added */
+    justify-content: center; 
     flex-wrap: wrap;
 }
 
@@ -606,28 +570,25 @@ img {
     transform: translateY(-2px);
 }
 .store-btn.google-play {
-    background: #0f7d2e; /* Your primary green */
+    background: #0f7d2e;
 }
 .store-btn.google-play:hover {
     background: #0d6c27;
 }
 
 .store-btn.app-store {
-    background: #333; /* Slightly darker */
+    background: #333; 
 }
 .store-btn.app-store:hover {
     background: #000;
 }
 
 
-/* -----------------------------------
-   2. HOW IT WORKS (BOXES)
------------------------------------ */
 .how-it-works-section {
     text-align: center;
     margin: 5rem 0;
     padding: 3rem 0;
-    background: #e8f9e9; /* Light green background */
+    background: #e8f9e9; 
 }
 
 .how-it-works-section h2 {
@@ -639,12 +600,11 @@ img {
     font-size: 1.15rem;
     color: #4E6B5F;
     max-width: 700px;
-    margin: 0 auto 3rem; /* Center and add space below description */
+    margin: 0 auto 3rem;
 }
 
 .steps-grid {
     display: grid;
-    /* Creates a responsive grid */
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.5rem;
     margin-top: 3rem;
@@ -665,40 +625,37 @@ img {
     box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-.step-number, .step-icon { /* Renamed for clarity, works with both */
+.step-number, .step-icon { 
     width: 50px;
     height: 50px;
-    background: #d4f4dd; /* Light green from footer button */
-    color: #1a5d3f;     /* Dark green from footer button */
+    background: #d4f4dd; 
+    color: #1a5d3f;    
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 0 auto 1.5rem; /* Center the circle */
+    margin: 0 auto 1.5rem; 
 }
 
 .step-card h3 {
     font-size: 1.25rem;
-    color: #008a62; /* Color from .stat .num */
+    color: #008a62;
     margin-bottom: 0.5rem;
 }
 
 .step-card p {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #4E6B5F; /* Standard text color */
+    color: #4E6B5F; 
 }
 
 
-/* -----------------------------------
-   3. MAIN CTA (PROFESSIONAL LOOK)
------------------------------------ */
+
 .ready-to-transform-section {
     text-align: center;
     margin: 80px 0;
-    /* Add background gradient from footer */
     background: linear-gradient(135deg, #1a5d3f, #14914a);
     color: #fff;
     padding: 4rem 2rem;
@@ -708,55 +665,51 @@ img {
 
 .ready-to-transform-section h2 {
     font-size: 2.5rem;
-    color: #d4f4dd; /* Light green text */
+    color: #d4f4dd; 
     margin-bottom: 1rem;
 }
 
 .ready-to-transform-section p {
-    margin: 0 auto 2rem; /* Center paragraph */
+    margin: 0 auto 2rem; 
     font-size: 1.2rem;
     color: #e0f7e0;
-    max-width: 600px; /* Keep line length readable */
+    max-width: 600px; 
 }
 
 .ready-to-transform-section .btn {
     margin-top: 1rem;
-    background: #fff; /* White button */
-    color: #1a5d3f; /* Dark green text */
+    background: #fff; 
+    color: #1a5d3f; 
     font-weight: 700;
-    padding: 1rem 2rem; /* Make it larger */
+    padding: 1rem 2rem; 
     font-size: 1.1rem;
     border: none; 
-    border-radius: 10px; /* Added border-radius */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Allow padding to apply */
-    transition: all 0.3s ease; /* Smooth hover effect */
+    border-radius: 10px; 
+    text-decoration: none; 
+    display: inline-block;
+    transition: all 0.3s ease; 
 }
 
 .ready-to-transform-section .btn:hover {
-    background: #d4f4dd; /* Light green on hover */
-    opacity: 1; /* Reset default opacity */
+    background: #d4f4dd; 
+    opacity: 1; 
     color: #1a5d3f;
-    transform: translateY(-3px); /* Add slight lift on hover */
+    transform: translateY(-3px);
 }
 
-/* -----------------------------------
-    BACK TO HOME
------------------------------------ */
+
 .back-home-row {
     text-align: center;
     margin: 40px 0;
 }
 
-/* This styles the link like a button */
 .back-home {
-    display: inline-block; /* Required for padding */
+    display: inline-block; 
     padding: 0.8rem 1.6rem;
     font-weight: 600;
     text-decoration: none;
     border-radius: 10px;
     
-    /* Styles to match your .btn.secondary */
     background: white;
     border: 2px solid #00b974;
     color: #00b974;
@@ -764,18 +717,15 @@ img {
 }
 
 .back-home:hover {
-    background: #f4fdf9; /* Light green background on hover */
-    opacity: 1; /* Reset default opacity */
+    background: #f4fdf9;
+    opacity: 1; 
 }
 
 
 
 
-/* -----------------------------------
-    RESPONSIVE
------------------------------------ */
+
 @media (max-width: 900px) {
-    /* Footer */
     .footer-wrapper {
         flex-direction: column;
         align-items: center;
@@ -803,12 +753,11 @@ img {
         justify-content: center;
     }
     .download-inner {
-        flex-direction: column; /* Stack download section on mobile */
+        flex-direction: column; 
     }
 }
 
 @media (max-width: 600px) {
-    /* Hero */
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -816,7 +765,6 @@ img {
         font-size: 1.1rem;
     }
     
-    /* Headings */
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
     .ready-to-transform-section h2,
@@ -824,48 +772,439 @@ img {
         font-size: 2rem;
     }
 
-    /* Hide shapes on mobile for performance */
     .section-shape,
     .bg-circle {
         display: none;
     }
 }
 
-/* -----------------------------------
-    FIXES
------------------------------------ */
-/* FIX: Add clean spacing between FAQ and Farmers Say */
+
 .accordion {
     margin-top: 60px !important;
     margin-bottom: 70px !important;
 }
 
-/* FIX: Testimonials spacing */
 .testimonials {
     margin-top: 160px !important;
 }
 
-/* FIX: Success story slider spacing */
 .slider {
     margin-top: 100px !important;
     margin-bottom: 60px !important;
 }
 
-/* FIX: FAQ items looking messy */
 .acc-item {
     padding: 1.3rem;
     border-radius: 12px;
     margin-bottom: 18px;
 }
 
-/* FIX: FAQ title alignment */
 .acc-head h4 {
     font-size: 1.1rem;
     font-weight: 600;
 }
 
-/* FIX: FAQ answer spacing */
 .acc-body {
     margin-top: 10px;
     line-height: 1.5;
 }
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .hero .left, .hero .right {
+        flex: 1 1 100%;
+        min-width: unset;
+    }
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .lead {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 900px) {
+    .download-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .download-inner .phone-mock,
+    .download-inner .app-ctas {
+        flex: unset;
+        min-width: 100%;
+    }
+}
+
+.store-row {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media (max-width: 900px) {
+    .steps-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .step-card h3 {
+        font-size: 1rem;
+    }
+    .step-card p {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 900px) {
+    .counters {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+@media (max-width: 900px) {
+    .slider-track {
+        overflow-x: scroll;
+        padding: 1rem 0;
+    }
+    .slide, .test-card {
+        min-width: 80%;
+    }
+}
+@media (max-width: 700px) {
+    .faq {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+@media (max-width: 900px) {
+    .footer-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-newsletter form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+}
+@media (max-width: 700px) {
+    .top-nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+}
+@media (max-width: 500px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+    p, .lead { font-size: 0.95rem; }
+
+    .btn, .store-btn, .back-home {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .ready-to-transform-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .counters .big {
+        font-size: 2rem;
+    }
+}
+ .hero .visual-box {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+    
+  
+    .sourcing-section, .slider, .how-it-works-section, .download-section, .site-footer {
+        background-color: #f9f9f9;
+    }
+
+    .sourcing-section {
+        padding: 80px 20px;
+        text-align: center;
+    }
+    .sourcing-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .sourcing-section .section-description {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto 50px auto;
+        line-height: 1.6;
+    }
+    .sourcing-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .sourcing-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+    }
+    .sourcing-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .sourcing-card i {
+        font-size: 2.5rem;
+        color: #2e8b57;
+        margin-bottom: 20px;
+        width: 50px;
+    }
+    .sourcing-card h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 10px;
+    }
+    .sourcing-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+    @media (max-width: 768px) {
+        .sourcing-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .how-it-works-section {
+        padding: 80px 20px;
+    }
+    main.container section.how-it-works-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center !important; 
+    }
+    main.container section.how-it-works-section .section-description {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 800px;
+        line-height: 1.6;
+        text-align: center !important; 
+        margin: 0 auto 50px auto !important; 
+    }
+    .how-it-works-section .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px; 
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .how-it-works-section .step-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px; 
+        text-align: center;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .how-it-works-section .step-card:hover {
+        transform: translateY(-8px); 
+        box-shadow: 0 12px 30px rgba(0,0,0,0.12); 
+    }
+    .how-it-works-section .step-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #2e8b57;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px; 
+    }
+    .how-it-works-section .step-card h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px !important; 
+    }
+    .how-it-works-section .step-card p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+    }
+    @media (max-width: 992px) {
+        .how-it-works-section .steps-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 768px) {
+        .how-it-works-section .steps-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    section.slider {
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section.slider h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .slider-track {
+        display: flex;
+        gap: 20px;
+    }
+    .slide {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 35px 30px 30px 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        border: 1px solid #e9e9e9;
+        flex: 0 0 320px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        text-align: left;
+    }
+    .slide:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .slide p {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .slide p::before {
+        content: '“';
+        font-family: Georgia, serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #2e8b57;
+        position: absolute;
+        top: -25px;
+        left: -10px;
+        line-height: 1;
+    }
+    .slide h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #333;
+        text-align: right;
+        margin-top: 15px;
+        position: relative;
+    }
+    .slide h4::before {
+        content: '— ';
+        color: #2e8b57;
+        font-weight: 700;
+    }
+    .slider-controls {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .control-btn {
+        position: relative;
+        top: 0; left: 0; right: 0;
+        transform: none;
+        background-color: #2e8b57;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+    .control-btn:hover {
+        background-color: #256d44;
+        transform: scale(1.1);
+    }
+
+    section.faq {
+        padding: 80px 20px;
+    }
+    main.container section.faq h2 { 
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333 !important;
+        text-align: center !important;
+        margin-bottom: 50px;
+    }
+    .accordion .acc-head h4 {
+        color: #333 !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+    }
+    .accordion {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+    }

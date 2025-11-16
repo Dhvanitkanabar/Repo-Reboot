@@ -1,20 +1,7 @@
-/*
-=========================================
- rupiya-app.js (Replaces farmers.js)
- - Manages logic for ALL pages
- - Accordion Logic
- - Slider Logic (Bug Fixed)
- - Counter Logic
- - Scroll Animation Logic (For ALL pages)
- - Crop Modal Logic
-=========================================
-*/
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ---------------------------------
-    // 1. Accordion (FAQ) Logic
-    // ---------------------------------
     try {
         const accItems = document.querySelectorAll('.acc-item');
         accItems.forEach(item => {
@@ -43,9 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Accordion elements not found.');
     }
 
-    // ---------------------------------
-    // 2. Slider (Success Stories) Logic
-    // ---------------------------------
+ 
+    
     try {
         const track = document.querySelector('.slider-track');
         if (!track) throw new Error("Slider track not found");
@@ -61,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         let currentSlideIndex = 0;
-        const slideWidth = 320 + 20; // 320px width + 20px gap
+        const slideWidth = 320 + 20;
         
         function moveSlide(direction) {
             currentSlideIndex += direction;
@@ -91,9 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // ---------------------------------
-    // 3. Counter (Stats) Logic
-    // ---------------------------------
     try {
         const counters = document.querySelectorAll('.counters .big');
         if (counters.length === 0) throw new Error("Counters not found");
@@ -128,9 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // ---------------------------------
-    // 4. ScrollReveal Animations
-    // ---------------------------------
     if (typeof ScrollReveal !== 'undefined') {
         const sr = ScrollReveal({
             origin: 'bottom',
@@ -141,8 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             reset: false
         });
 
-        // --- COMMON ANIMATIONS (All Pages) ---
-        sr.reveal('.hero .left h1', { origin: 'left', delay: 200 });
+    sr.reveal('.hero .left h1', { origin: 'left', delay: 200 });
         sr.reveal('.hero .lead', { origin: 'left', delay: 300 });
         sr.reveal('.hero .hero-cta', { origin: 'left', delay: 400 });
         sr.reveal('.hero .hero-stats', { delay: 500 });
@@ -150,35 +129,28 @@ document.addEventListener('DOMContentLoaded', function() {
         sr.reveal('.counters .counter', { interval: 100 });
         sr.reveal('.slider h2, .testimonials h2, .faq h2, .download-section h2, .ready-to-transform-section h2', { delay: 100 });
         sr.reveal('.slider-track', { delay: 300 });
-        sr.reveal('.test-grid .test-card', { interval: 150 }); // For farmers.html testimonials
+        sr.reveal('.test-grid .test-card', { interval: 150 });
         sr.reveal('.acc-item', { interval: 100 });
         sr.reveal('.download-section .phone-mock', { origin: 'left', delay: 200 });
         sr.reveal('.download-section .app-ctas', { origin: 'right', delay: 300 });
         sr.reveal('.ready-to-transform-section .btn', { delay: 300, scale: 1.1 });
-        sr.reveal('.how-it-works-section .steps-grid .step-card', { interval: 150 }); // For steps on all pages
+        sr.reveal('.how-it-works-section .steps-grid .step-card', { interval: 150 });
 
-        // --- PAGE-SPECIFIC ANIMATIONS ---
-
-        // farmers.html
-        sr.reveal('.gallery-grid img', { interval: 100 });
+     sr.reveal('.gallery-grid img', { interval: 100 });
         sr.reveal('.support-grid .support-card', { interval: 150 });
         sr.reveal('.carbon-step-card', { interval: 200 });
         sr.reveal('.crop-grid .crop-item', { interval: 80, distance: '30px', scale: 0.9 });
 
-        // fpos.html
-        sr.reveal('.empower-grid .empower-card', { interval: 150 });
+     sr.reveal('.empower-grid .empower-card', { interval: 150 });
         
-        // buyers.html
-        sr.reveal('.sourcing-grid .sourcing-card', { interval: 150 });
+ sr.reveal('.sourcing-grid .sourcing-card', { interval: 150 });
 
     } else {
         console.log('ScrollReveal library not found.');
     }
 
     
-    // ---------------------------------
-    // 5. Crop Modal Logic (farmers.html)
-    // ---------------------------------
+    
     try {
         const modal = document.getElementById('crop-modal');
         if (!modal) throw new Error("Crop modal not found");

@@ -658,9 +658,7 @@ p {
     box-shadow: 0 0 15px rgba(0,0,0,0.06);
 }
 
-/* -----------------------------------
-    FAQ ACCORDION
------------------------------------ */
+
 .accordion {
     margin-top: 2rem;
 }
@@ -684,9 +682,7 @@ p {
     display: none;
 }
 
-/* -----------------------------------
-   1. DOWNLOAD APP (CENTERED)
------------------------------------ */
+
 .download {
     margin-top: 80px;
     padding: 60px 0;
@@ -695,12 +691,11 @@ p {
 .download-inner {
     display: flex;
     align-items: center;
-    justify-content: center; /* This was updated */
+    justify-content: center;
     gap: 40px;
-    text-align: center; /* This was added */
-    flex-wrap: wrap; /* Added for responsiveness */
+    text-align: center; 
+    flex-wrap: wrap; 
 }
-
 .download-inner img {
     width: 260px;
 }
@@ -709,7 +704,7 @@ p {
     display: flex;
     gap: 15px;
     margin-top: 15px;
-    justify-content: center; /* This was added */
+    justify-content: center; 
 }
 
 .store-btn {
@@ -721,26 +716,20 @@ p {
     font-weight: 600;
 }
 
-/* -----------------------------------
-   2. HOW IT WORKS (BOXES)
------------------------------------ */
+
 .how {
     text-align: center;
     margin: 80px 0;
-    /* Give the whole section a background */
     background: #e8f9e9; 
     padding: 4rem 2rem;
     border-radius: 20px;
 }
-
-/* Hide the old .steps paragraph */
 .how .steps {
     display: none;
 }
 
 .steps-grid {
     display: grid;
-    /* Creates a responsive grid */
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.5rem;
     margin-top: 3rem;
@@ -764,37 +753,33 @@ p {
 .step-number {
     width: 50px;
     height: 50px;
-    background: #d4f4dd; /* Light green from footer button */
-    color: #1a5d3f;     /* Dark green from footer button */
-    border-radius: 50%;
+    background: #d4f4dd; 
+    color: #1a5d3f;   
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 0 auto 1.5rem; /* Center the circle */
+    margin: 0 auto 1.5rem; 
 }
 
 .step-card h3 {
     font-size: 1.25rem;
-    color: #008a62; /* Color from .stat .num */
+    color: #008a62; 
     margin-bottom: 0.5rem;
 }
 
 .step-card p {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #4E6B5F; /* Standard text color */
+    color: #4E6B5F; 
 }
 
 
-/* -----------------------------------
-   3. MAIN CTA (PROFESSIONAL LOOK)
------------------------------------ */
+
 .main-cta {
     text-align: center;
     margin: 80px 0;
-    /* Add background gradient from footer */
     background: linear-gradient(135deg, #1a5d3f, #14914a);
     color: #fff;
     padding: 4rem 2rem;
@@ -804,37 +789,34 @@ p {
 
 .main-cta h2 {
     font-size: 2.5rem;
-    color: #d4f4dd; /* Light green text */
+    color: #d4f4dd; 
     margin-bottom: 1rem;
 }
 
 .main-cta p {
-    margin: 0 auto 2rem; /* Center paragraph */
+    margin: 0 auto 2rem; 
     font-size: 1.2rem;
     color: #e0f7e0;
-    max-width: 600px; /* Keep line length readable */
+    max-width: 600px; 
 }
 
-/* Style the button to contrast with the dark background */
 .main-cta .btn {
     margin-top: 1rem;
-    background: #fff; /* White button */
-    color: #1a5d3f; /* Dark green text */
+    background: #fff; 
+    color: #1a5d3f;
     font-weight: 700;
-    padding: 1rem 2rem; /* Make it larger */
+    padding: 1rem 2rem; 
     font-size: 1.1rem;
-    border: none; /* Remove border if .secondary class was used */
+    border: none; 
 }
 
 .main-cta .btn:hover {
-    background: #d4f4dd; /* Light green on hover */
-    opacity: 1; /* Reset opacity from default .btn:hover */
+    background: #d4f4dd; 
+    opacity: 1; 
     color: #1a5d3f;
 }
 
-/* -----------------------------------
-    BACK TO HOME
------------------------------------ */
+
 .back-home-row {
     text-align: center;
     margin: 40px 0;
@@ -846,10 +828,6 @@ p {
     font-weight: 600;
 }
 
-/* -----------------------------------
-    FOOTER
------------------------------------ */
-/* This .footer rule seems unused, but we'll leave it */
 .footer {
     margin-top: 50px;
     background: #fff;
@@ -857,7 +835,6 @@ p {
     padding: 25px 0;
     text-align: center;
 }
-/* This is the main footer style you are using */
 .site-footer {
     background: linear-gradient(135deg, #1a5d3f, #14914a);
     color: #fff;
@@ -867,7 +844,6 @@ p {
     z-index: 1;
 }
 
-/* Shapes for Footer */
 .site-footer .section-shape {
     position: absolute;
     border-radius: 50%;
@@ -1020,9 +996,7 @@ p {
     color: #d4f4dd;
 }
 
-/* -----------------------------------
-    RESPONSIVE
------------------------------------ */
+
 @media (max-width: 900px) {
     /* Footer */
     .footer-wrapper {
@@ -1082,10 +1056,6 @@ p {
     }
 }
 
-/* -----------------------------------
-    FIXES
------------------------------------ */
-/* FIX: Add clean spacing between FAQ and Farmers Say */
 .accordion {
     margin-top: 60px !important;
     margin-bottom: 70px !important;
@@ -1422,9 +1392,7 @@ p {
     margin-top: 10px;
     line-height: 1.5;
 }
-/* -----------------------------------
-   CARBON CALCULATOR
------------------------------------ */
+
 
 .calculator-section {
   max-width: 800px;
@@ -1437,7 +1405,7 @@ p {
 
 .calculator-form {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-template-columns: 1fr 1fr; 
   gap: 1.5rem;
   margin: 1.5rem 0;
   align-items: flex-end;
@@ -1460,15 +1428,14 @@ p {
   font-family: "Inter", sans-serif;
 }
 
-/* Re-use the .btn style for the button */
 .calculator-form button.btn {
-  grid-column: 1 / -1; /* Make button span both columns */
+  grid-column: 1 / -1; 
 }
 
 #calculator-result {
   margin-top: 1rem;
   padding: 1rem;
-  background: #f4fdf9; /* Your light green bg */
+  background: #f4fdf9; 
   border: 1px solid #dfffe0;
   border-radius: 8px;
   font-size: 1.1rem;
@@ -1482,16 +1449,14 @@ p {
   font-size: 1.3rem;
 }
 
-/* Responsive calculator */
 @media (max-width: 600px) {
   .calculator-form {
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: 1fr; 
   }
   .calculator-form button.btn {
-    grid-column: 1; /* Reset for single column */
+    grid-column: 1; 
   }
 }
-/* === NAVBAR === */
 .navbar {
     background: #ffffff;
     padding: 16px 40px;
@@ -1528,4 +1493,59 @@ p {
 
 .navbar nav a:hover {
     color: #27a239;
+}
+.hero { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+.hero h1 { font-size: 2.4rem; color: #009b65; }
+.hero p { max-width: 550px; }
+
+@media(max-width:700px){
+  .hero { flex-direction: column; text-align: center; }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+}
+.gallery-grid, .test-grid, .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 1rem;
+}
+
+@media(max-width:600px){
+  .gallery-grid, .test-grid, .steps-grid { grid-template-columns: 1fr; }
+}
+.hero-stats, .counters {
+  display: flex;
+  gap: 2rem;
+}
+
+@media(max-width:700px){
+  .hero-stats, .counters { flex-direction: column; align-items: center; }
+}
+.download-inner { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
+.store-row { display: flex; gap: 15px; justify-content: center; }
+
+@media(max-width:600px){
+  .download-inner { flex-direction: column; }
+  .store-row { flex-direction: column; gap: 10px; }
+}
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
+
+@media(max-width:600px){
+  .steps-grid { grid-template-columns: 1fr; }
+  .step-card { padding: 1.5rem; }
+}
+.calculator-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+@media(max-width:600px){
+  .calculator-form { grid-template-columns: 1fr; }
+  .calculator-form button { grid-column: 1; }
+}
+.main-cta { padding: 3rem 1.5rem; }
+.footer-wrapper { flex-wrap: wrap; justify-content: center; text-align: center; }
+.footer-newsletter form { flex-direction: column; gap: 10px; }
+.footer-socials { justify-content: center; }
+@media(max-width:600px){
+  .section-shape, .bg-circle, .floating-icons { display: none; }
+}
+@media(max-width:600px){
+  h1,h2,h3,h4 { font-size: 1.8rem; }
 }
