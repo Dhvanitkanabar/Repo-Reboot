@@ -1,26 +1,12 @@
-/*
-=========================================
- farmers.js
- - Manages logic for BOTH farmers.html and fpos.html
- - Accordion Logic
- - Slider Logic (Bug Fixed)
- - Counter Logic
- - Scroll Animation Logic (For BOTH pages)
- - Crop Modal Logic
-=========================================
-*/
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ---------------------------------
-    // 1. Accordion (FAQ) Logic
-    // ---------------------------------
+ 
     try {
         const accItems = document.querySelectorAll('.acc-item');
         accItems.forEach(item => {
             const head = item.querySelector('.acc-head');
             head.addEventListener('click', () => {
-                // Close all other items
                 accItems.forEach(otherItem => {
                     if (otherItem !== item && otherItem.classList.contains('active')) {
                         otherItem.classList.remove('active');
@@ -29,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
 
-                // Toggle the clicked item
                 item.classList.toggle('active');
                 const body = item.querySelector('.acc-body');
                 const icon = item.querySelector('.acc-icon');
@@ -46,9 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Accordion elements not found.');
     }
 
-    // ---------------------------------
-    // 2. Slider (Success Stories) Logic
-    // ---------------------------------
+   
     try {
         const track = document.querySelector('.slider-track');
         if (!track) throw new Error("Slider track not found");
@@ -59,14 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!nextButton || !prevButton) throw new Error("Slider controls not found");
 
-        // Clone slides for infinite loop effect
         slides.forEach(slide => {
             track.appendChild(slide.cloneNode(true));
         });
 
         let currentSlideIndex = 0;
         
-        // BUG FIX: Use hard-coded width from CSS (320px + 20px gap)
         const slideWidth = 320 + 20;
         
         function moveSlide(direction) {
@@ -90,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Add event listeners (replaces onclick="")
         nextButton.addEventListener('click', () => moveSlide(1));
         prevButton.addEventListener('click', () => moveSlide(-1));
 
@@ -99,14 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // ---------------------------------
-    // 3. Counter (Stats) Logic
-    // ---------------------------------
+ 
     try {
         const counters = document.querySelectorAll('.counters .big');
         if (counters.length === 0) throw new Error("Counters not found");
         
-        const speed = 200; // Speed of counting
+        const speed = 200; 
 
         const animateCounter = (counter) => {
             const target = +counter.getAttribute('data-target');
@@ -136,9 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // ---------------------------------
-    // 4. ScrollReveal Animations
-    // ---------------------------------
     if (typeof ScrollReveal !== 'undefined') {
         const sr = ScrollReveal({
             origin: 'bottom',
@@ -149,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
             reset: false
         });
 
-        // Common Animations (Both Pages)
         sr.reveal('.hero .left h1', { origin: 'left', delay: 200 });
         sr.reveal('.hero .lead', { origin: 'left', delay: 300 });
         sr.reveal('.hero .hero-cta', { origin: 'left', delay: 400 });
@@ -164,14 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
         sr.reveal('.download-section .app-ctas', { origin: 'right', delay: 300 });
         sr.reveal('.ready-to-transform-section .btn', { delay: 300, scale: 1.1 });
 
-        // --- FARMERS.HTML Only Animations ---
         sr.reveal('.gallery-grid img', { interval: 100 });
         sr.reveal('.support-grid .support-card', { interval: 150 });
         sr.reveal('.carbon-step-card', { interval: 200 });
         sr.reveal('.crop-grid .crop-item', { interval: 80, distance: '30px', scale: 0.9 });
         sr.reveal('.how-it-works-section .steps-grid .step-card', { interval: 150 }); // farmers.html steps
 
-        // --- FPOS.HTML Only Animations ---
         sr.reveal('.empower-grid .empower-card', { interval: 150 });
         sr.reveal('.how-it-works-section .step-card', { interval: 150 }); // fpos.html steps
 
@@ -180,9 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     
-    // ---------------------------------
-    // 5. Crop Modal Logic (farmers.html)
-    // ---------------------------------
     try {
         const modal = document.getElementById('crop-modal');
         if (!modal) throw new Error("Crop modal not found");
@@ -195,14 +164,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const modalBenefitsList = document.getElementById('modal-crop-benefits');
         const modalCta = document.getElementById('modal-crop-cta');
 
-        // --- Crop Data (Update this!) ---
         const cropData = {
             "Pomegranate": { image: "assets/crops/pomegranate.jpg", testimonial: "“Our pomegranates are bigger and have fewer spots since joining Rupiya.” — R. Patel, Nashik", benefits: ["Avg. 20% increase in fruit size", "Reduced fungal infections & spots", "Guaranteed buy-back for export quality"], ctaText: "Get Advisory for Pomegranate" },
             "Grapes": { image: "assets/crops/grapes.jpg", testimonial: "“Rupiya’s advisory helped me achieve the perfect sugar level for my grapes.” — S. Devi, Sangli", benefits: ["Improved berry uniformity (TSS)", "100% Residue-free for export", "Access to premium wine and table buyers"], ctaText: "Get Advisory for Grapes" },
             "Tomato": { image: "assets/crops/tomato.jpg", testimonial: "“No more leaf curl virus. My yield has doubled and the fruit is high quality.” — H. Kumar", benefits: ["Drastic reduction in pests & viruses", "Longer shelf-life (15+ days)", "Certified for institutional buyers (ITC, etc.)"], ctaText: "Get Advisory for Tomato" },
             "Default": { image: "assets/crops/default.jpg", testimonial: "“Rupiya’s inputs work for all my vegetables and improve my soil.” — Farmer", benefits: ["Improved soil organic carbon (SOC)", "Lower input costs across all crops", "Access to our full expert network"], ctaText: "Ask About This Crop" }
         };
-        // Add defaults for other crops
         ["Chilli", "Potato", "Cotton", "Onion", "Sugarcfane", "Soybean", "Turmeric"].forEach(crop => {
             cropData[crop] = { ...cropData["Default"], image: `assets/crops/${crop.toLowerCase()}.jpg`, ctaText: `Get Advisory for ${crop}` };
         });

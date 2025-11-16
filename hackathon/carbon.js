@@ -1,46 +1,34 @@
-/* -----------------------------------
-    FAQ ACCORDION LOGIC
------------------------------------ */
+
 document.addEventListener("DOMContentLoaded", () => {
     
-    // Select all accordion items
     const accItems = document.querySelectorAll('.acc-item');
 
     accItems.forEach(item => {
         const head = item.querySelector('.acc-head');
         const body = item.querySelector('.acc-body');
         
-        if (head && body) { // Ensure both head and body exist
+        if (head && body) { 
             head.addEventListener('click', () => {
-                // Check if the item is already active
                 const isActive = item.classList.contains('active');
 
-                // --- Optional: Close all other items ---
                 accItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
                         otherItem.querySelector('.acc-body').style.display = 'none';
-                        // If you have an icon, you'd reset it here
-                        // Example: otherItem.querySelector('.acc-icon').innerText = '+';
                     }
                 });
-                // --- End of Optional Section ---
 
-                // Toggle the clicked item
                 if (isActive) {
                     item.classList.remove('active');
                     body.style.display = 'none';
-                    // Example: item.querySelector('.acc-icon').innerText = '+';
                 } else {
                     item.classList.add('active');
                     body.style.display = 'block';
-                    // Example: item.querySelector('.acc-icon').innerText = '-';
                 }
             });
         }
     });
 
-    // --- Add this block if you still have the counter logic ---
     const counters = document.querySelectorAll('.big[data-target]');
     if (counters.length > 0) {
         const speed = 200; 
@@ -70,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- Add this block if you still have the calculator logic ---
     const calculateBtn = document.getElementById('calculate-btn');
     if (calculateBtn) {
         const hectaresInput = document.getElementById('hectares');

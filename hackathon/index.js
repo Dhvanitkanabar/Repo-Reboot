@@ -1,14 +1,7 @@
-/*
-=========================================
- rupiya-app.js (Universal JS File - FINAL WORKING VERSION)
- - Handles all logic: Chatbot, Voice, Soil, Image Diagnosis Simulation, 
-   Q&A, Counters, Sliders, and Scroll Animations.
-=========================================
-*/
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- 0. DATA MODELS ---
     const DETAILED_CROP_INFO = {
         "tomato": {
             advice: "For **Tomato**, focus on preventing **Early Blight** by increasing airflow and reducing canopy density. Apply our **Bio-Fungicide (Input 12)** every 10 days post-flowering. Our advisory recommends adding **compost tea** during the fruit set stage.",
@@ -426,7 +419,6 @@ document.addEventListener('DOMContentLoaded', function() {
         "what is a drought warning": "Forecast indicating **below-normal rainfall**.",
     };
 
-    // --- Helper function to find best QA match ---
     function findBestQA(text) {
         let bestMatch = null;
         let highestScore = 0;
@@ -452,7 +444,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return bestMatch;
     }
 
-    // --- Helper function to find best crop advice match ---
     function findBestCropAdvice(text) {
         for (const cropKey in DETAILED_CROP_INFO) {
             const data = DETAILED_CROP_INFO[cropKey];
@@ -463,13 +454,11 @@ document.addEventListener('DOMContentLoaded', function() {
         return null;
     }
 
-    // --- MAIN EXECUTION BLOCK ---
 
     const chatFab = document.getElementById('chat-fab');
 
     if (chatFab) {
 
-        // --- 0. Get all elements (SINGLE DECLARATION POINT) ---
         const chatModal = document.getElementById('chat-modal');
         const chatCloseBtn = document.getElementById('chat-close-btn');
         const chatMicBtn = document.getElementById('chat-mic-btn');
@@ -486,7 +475,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const soilKInput = document.getElementById('soil-k');
 
 
-        // --- UTILITY FUNCTIONS ---
         function addMessage(text, sender) {
             const bubble = document.createElement('div');
             bubble.classList.add('chat-bubble', sender);
@@ -523,7 +511,6 @@ document.addEventListener('DOMContentLoaded', function() {
             getBotResponse(text);
         }
 
-        // --- LOCATION SERVICE FUNCTIONS ---
         function promptForLocation() {
             const card = document.createElement('div');
             card.classList.add('chat-bubble', 'bot-card');
@@ -566,7 +553,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // --- SIMULATED AI FUNCTIONS ---
         function simulateImageDiagnosis(fileName) {
             const cropKeys = Object.keys(DETAILED_CROP_INFO);
             const randomKey = cropKeys[Math.floor(Math.random() * cropKeys.length)];
@@ -619,7 +605,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
 
-        // --- GET BOT RESPONSE (MAIN DECISION TREE) ---
         function getBotResponse(userText) {
             const typingBubble = addMessage("...", 'bot');
             const lowerUserText = userText.toLowerCase();
@@ -661,20 +646,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 800);
         }
         
-        // --- FINAL EVENT LISTENERS (Guaranteed to Work) ---
         
-        // CHAT WINDOW TOGGLE
         if (chatFab) {
             chatFab.addEventListener('click', () => { chatModal.classList.toggle('active'); });
             chatCloseBtn.addEventListener('click', () => { chatModal.classList.remove('active'); if (soilModal) soilModal.classList.remove('active'); });
         }
 
-        // TEXT/ENTER KEY
         if (chatTextInput) {
             chatTextInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
         }
 
-        // IMAGE LISTENERS (Uses existing 'chatImageBtn' and 'chatFileInput' variables)
         if (chatImageBtn) {
             chatImageBtn.addEventListener('click', () => { chatFileInput.click(); });
             chatFileInput.addEventListener('change', (event) => {
@@ -683,8 +664,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-        
-        // SOIL LISTENERS
         if (chatSoilBtn && soilModal && soilSubmitBtn && soilCancelBtn) {
             chatSoilBtn.addEventListener('click', () => { chatModal.classList.remove('active'); soilModal.classList.add('active'); });
             soilCancelBtn.addEventListener('click', () => { soilModal.classList.remove('active'); });
@@ -705,7 +684,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // VOICE SETUP (Uses existing 'chatMicBtn' variable)
         try {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
             if (SpeechRecognition) {
@@ -742,16 +720,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-// --- Soil Test Modal Logic ---
 document.addEventListener('DOMContentLoaded', () => {
     const chatSoilBtn = document.getElementById('chat-soil-btn');
     const soilModal = document.getElementById('soil-input-modal');
     const soilCancelBtn = document.getElementById('soil-cancel');
     const soilSubmitBtn = document.getElementById('soil-submit');
     const chatMessages = document.getElementById('chat-messages');
-    const chatModal = document.getElementById('chat-modal'); // The main chat window
+    const chatModal = document.getElementById('chat-modal'); 
 
-    // Helper function to create a chat bubble
     function createChatBubble(message, type) {
         const bubble = document.createElement('div');
         bubble.classList.add('chat-bubble', type);
@@ -759,20 +735,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return bubble;
     }
 
-    // 1. Open the Soil Input Modal
     chatSoilBtn.addEventListener('click', () => {
-        // First, ensure the chat modal is open (if it's not already)
         chatModal.style.display = 'block'; 
-        // Then, show the soil input modal
         soilModal.style.display = 'flex';
     });
 
-    // 2. Close the Soil Input Modal (Cancel Button)
     soilCancelBtn.addEventListener('click', () => {
         soilModal.style.display = 'none';
     });
     
-    // Also close the modal if the user clicks outside of the content
     soilModal.addEventListener('click', (e) => {
         if (e.target === soilModal) {
             soilModal.style.display = 'none';
@@ -780,26 +751,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // 3. Process and Submit the Soil Data
     soilSubmitBtn.addEventListener('click', () => {
         const ph = parseFloat(document.getElementById('soil-ph').value);
         const n = parseInt(document.getElementById('soil-n').value);
         const p = parseInt(document.getElementById('soil-p').value);
         const k = parseInt(document.getElementById('soil-k').value);
 
-        // Basic validation
         if (isNaN(ph) || isNaN(n) || isNaN(p) || isNaN(k)) {
             alert("Please enter valid numerical values for all soil parameters.");
             return;
         }
 
-        // 3a. Add user confirmation message to chat
         const userMessage = `**Soil Data Submitted:**<br>
                              pH: **${ph}** | N: **${n} kg/ha**<br>
                              P: **${p} kg/ha** | K: **${k} kg/ha**`;
         chatMessages.appendChild(createChatBubble(userMessage, 'user'));
 
-        // 3b. Simulate AI Analysis and recommendation
         let advisory = "Based on your soil data, here is the Rupiya AI Advisory:";
         let status = 'Good';
 
@@ -826,72 +793,42 @@ document.addEventListener('DOMContentLoaded', () => {
         advisory += "<br><br>We have created a custom **Residue-Free Input Plan** for your next crop cycle based on this analysis. Please check your Rupiya App for the full report!";
 
 
-        // 3c. Add AI response to chat
         setTimeout(() => {
             chatMessages.appendChild(createChatBubble(advisory, 'bot'));
-            chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the latest message
-        }, 1000); // Simulate a 1-second delay for processing
-
-        // 3d. Close the modal
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1000); 
         soilModal.style.display = 'none';
     });
 });
-/*
-=========================================
-farmers.js - COMPLETE ANIMATION AND INTERACTIVITY SCRIPT
-- 1. Webload Animation Trigger
-- 2. Accordion Logic (with max-height fix for transition)
-- 3. Slider Logic
-- 4. Counter Logic
-- 5. ScrollReveal Animations (FIXED TARGETING)
-- 6. Crop Modal Logic
-=========================================
-*/
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ===============================================
-    // 1. WEB-LOAD ANIMATION TRIGGER (CSS reliance)
-    // ===============================================
-    // The 'loaded' class is added to the body in the HTML, 
-    // which triggers the Navbar and Hero slide-in via CSS.
-
-    // ===============================================
-    // 2. ACCORDION (FAQ) LOGIC (Adjusted for CSS Max-Height Transition)
-    // ===============================================
     const accItems = document.querySelectorAll('.acc-item');
     accItems.forEach(item => {
         const head = item.querySelector('.acc-head');
         head.addEventListener('click', () => {
-            // Close all other items
             accItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
-                    // Set max-height to null to collapse it
                     otherItem.querySelector('.acc-body').style.maxHeight = null;
                     otherItem.querySelector('.acc-icon').textContent = '+';
                 }
             });
 
-            // Toggle the clicked item
             item.classList.toggle('active');
             const body = item.querySelector('.acc-body');
             const icon = item.querySelector('.acc-icon');
             if (item.classList.contains('active')) {
-                // Set max-height to the scroll height to smoothly open the element
                 body.style.maxHeight = body.scrollHeight + 'px';
                 icon.textContent = '–';
             } else {
-                // Set max-height to null to smoothly close the element
                 body.style.maxHeight = null;
                 icon.textContent = '+';
             }
         });
     });
 
-    // ===============================================
-    // 3. SLIDER (Success Stories) LOGIC
-    // ===============================================
     try {
         const track = document.querySelector('.slider-track');
         if (!track) throw new Error("Slider track not found"); 
@@ -902,14 +839,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!nextButton || !prevButton) throw new Error("Slider controls not found");
 
-        // Clone slides for infinite loop effect
         slides.forEach(slide => {
             track.appendChild(slide.cloneNode(true));
         });
 
         let currentSlideIndex = 0;
         
-        // This width must match the CSS width + gap (320px + 20px)
         const slideWidth = 340; 
         
         function moveSlide(direction) {
@@ -917,7 +852,6 @@ document.addEventListener('DOMContentLoaded', function() {
             track.style.transition = 'transform 0.5s ease-in-out';
             track.style.transform = 'translateX(' + (-currentSlideIndex * slideWidth) + 'px)';
 
-            // Reset for infinite loop (Jump back after animation completes)
             if (currentSlideIndex >= slides.length) {
                 setTimeout(() => {
                     track.style.transition = 'none';
@@ -938,23 +872,19 @@ document.addEventListener('DOMContentLoaded', function() {
         prevButton.addEventListener('click', () => moveSlide(-1));
 
     } catch (e) {
-        // console.log('Slider elements not found, skipping slider init:', e.message);
     }
 
-    // ===============================================
-    // 4. COUNTER (Stats) LOGIC
-    // ===============================================
+
     const counters = document.querySelectorAll('.big[data-target]');
     const speed = 200; 
 
     const animateCounter = (counter) => {
         const target = +counter.getAttribute('data-target');
-        const currentText = counter.innerText.replace(/[^0-9.]/g, ''); // Remove non-numeric characters
+        const currentText = counter.innerText.replace(/[^0-9.]/g, ''); 
         const current = +currentText;
         const increment = target / speed;
 
         if (current < target) {
-            // Use Math.ceil to prevent fractional display and ensure it reaches the target
             counter.innerText = Math.ceil(current + increment).toLocaleString('en-US');
             setTimeout(() => animateCounter(counter), 10);
         } else {
@@ -962,82 +892,68 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Observer to start counter when visible
     const counterObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Animate only the counters that are visible
                 entry.target.querySelectorAll('.big[data-target]').forEach(animateCounter);
                 observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
 
-    // The counters are likely in a section like '.stats' or '.counters'
     const counterSection = document.querySelector('.stats-container') || document.querySelector('.counters');
     if (counterSection) {
         counterObserver.observe(counterSection);
     }
 
 
-    // ===============================================
-    // 5. SCROLLREVEAL ANIMATIONS (FIXED)
-    // ===============================================
+ 
     if (typeof ScrollReveal !== 'undefined') {
         const sr = ScrollReveal({
-            // Default settings for all reveals
             origin: 'bottom',
             distance: '60px',
             duration: 900,
             delay: 50,
             easing: 'cubic-bezier(0.5, 0, 0, 1)',
-            reset: false // Animations only happen once
+            reset: false 
         });
         
-        // --- 5a. Custom Hero Reveals (Though CSS handles the primary load) ---
         sr.reveal('.hero-btn', { origin: 'top', delay: 600 });
         sr.reveal('.floating-icons .float-item', { interval: 100, scale: 0.8, rotate: { z: 20 } });
 
-        // --- 5b. General Section Titles (Slightly faster reveal) ---
         sr.reveal('.section-title, .section-subtitle, .finance-sub, .carbon-deep-dive-section h2', { delay: 100, distance: '30px' });
         
-        // --- 5c. Sequential Flow Section ---
         sr.reveal('.flow-card', { interval: 150, delay: 200 });
         sr.reveal('.flow-arrow', { interval: 150, rotate: { z: 90 } });
 
-        // --- 5d. Grids and Cards (Staggered fade-up) ---
         sr.reveal('.service-card', { interval: 100 });
         sr.reveal('.stat-box', { interval: 150 });
         sr.reveal('.carbon-stat-card', { interval: 150, origin: 'right' });
         
-        // *******************************************************************
-        // ✅ FIX: TARGETING THE NEW FINANCE STRUCTURE
-        // We now explicitly target the cards inside the top and bottom wrappers.
+   
         sr.reveal('.finance-grid-top .fin-card, .finance-grid-bottom .fin-card', { 
             interval: 100, 
             distance: '40px',
             delay: 150 
         });
-        // *******************************************************************
+      
 
         sr.reveal('.audience-grid .aud-card', { interval: 80, scale: 0.95 });
         
-        // --- 5e. Special Element Reveals ---
+
         sr.reveal('.carbon-explanation', { origin: 'left', delay: 150 });
         sr.reveal('.soc-diagram-buttons', { delay: 300, distance: '30px' });
         sr.reveal('.contact-cards .card', { interval: 100, origin: 'top' });
         sr.reveal('.contact-form', { origin: 'right', delay: 150 });
         
-        // --- 5f. Footer Reveal ---
+
         sr.reveal('.site-footer .footer-wrapper > div, .site-footer .footer-socials, .footer-bottom', { interval: 100, delay: 200 });
 
     } else {
         console.warn('ScrollReveal library not found. Scroll animations disabled.');
     }
 
-    // ===============================================
-    // 6. CROP MODAL LOGIC (Placeholder/Simplified)
-    // ===============================================
+
 
     const cropData = { 
         "Pomegranate": { image: "assets/crops/pomogranate.jpeg", testimonial: "“...pomegranates are bigger and have fewer spots...”", benefits: ["Avg. 20% increase in fruit size"], ctaText: "Get Advisory for Pomegranate" },
@@ -1047,10 +963,6 @@ document.addEventListener('DOMContentLoaded', function() {
         "Default": { image: "assets/crops/sugarcane.jpeg", testimonial: "“Rupiya’s inputs work for all my vegetables...”", benefits: ["Improved soil organic carbon (SOC)"], ctaText: "Ask About This Crop" }
     };
     
-    // Add your full modal initialization logic here, which typically involves:
-    // 1. Getting modal elements (const modal = document.getElementById('crop-modal');)
-    // 2. Defining openModal and closeModal functions.
-    // 3. Attaching event listeners to all crop buttons and the modal close button.
-    // (This part is omitted for brevity as it's just the structural JS file update)
+
 });
 soilInputModal.classList.add('visible');

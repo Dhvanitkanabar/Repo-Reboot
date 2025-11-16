@@ -1,4 +1,3 @@
-// Fade-in timeline animation
 const steps = document.querySelectorAll(".timeline-step");
 
 steps.forEach(step => {
@@ -18,12 +17,10 @@ const observer = new IntersectionObserver(entries => {
 
 steps.forEach(step => observer.observe(step));
 
-// HERO TEXT ANIMATION
 gsap.from(".hero h1", { y: 40, opacity: 0, duration: 1 });
 gsap.from(".hero p", { y: 40, opacity: 0, duration: 1, delay: 0.3 });
 gsap.from(".hero-btn", { y: 20, opacity: 0, duration: 1, delay: 0.6 });
 
-// FLOATING ICONS — slight rotation animation
 gsap.to(".float-item", {
     rotation: 10,
     yoyo: true,

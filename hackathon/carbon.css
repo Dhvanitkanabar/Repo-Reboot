@@ -1,6 +1,4 @@
-/* -----------------------------------
-   GLOBAL RESET + BASE
------------------------------------ */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,9 +13,6 @@ body {
     line-height: 1.6;
 }
 
-/* -----------------------------------
-   FLOATING BACKGROUND CIRCLES
------------------------------------ */
 .bg-circle {
     position: absolute;
     border-radius: 50%;
@@ -37,9 +32,7 @@ body {
  100% { transform: translateY(0); }
 }
 
-/* -----------------------------------
-   TOP NAVBAR
------------------------------------ */
+
 .top-nav {
   width: 100%;
   padding: 20px 40px;
@@ -61,18 +54,14 @@ body {
 }
 
 
-/* -----------------------------------
-   CONTAINER
------------------------------------ */
+
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 2rem 1rem;
 }
 
-/* -----------------------------------
-   HERO SECTION
------------------------------------ */
+
 .hero {
     display: flex;
     align-items: center;
@@ -113,7 +102,6 @@ body {
     opacity: 0.8;
 }
 
-/* Hero stats */
 .hero-stats {
     display: flex;
     gap: 2rem;
@@ -126,7 +114,6 @@ body {
     color: #008a62;
 }
 
-/* Right side visual box */
 .visual-box {
     background: white;
     padding: 1rem;
@@ -134,9 +121,7 @@ body {
     box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
-/* -----------------------------------
-   GALLERY
------------------------------------ */
+
 .gallery {
     text-align: center;
     margin-top: 3rem;
@@ -154,9 +139,7 @@ body {
     border-radius: 12px;
 }
 
-/* -----------------------------------
-   COUNTERS
------------------------------------ */
+
 .counters {
     display: flex;
     justify-content: space-around;
@@ -175,9 +158,6 @@ body {
     color: #00885d;
 }
 
-/* -----------------------------------
-   SLIDER (SUCCESS STORIES)
------------------------------------ */
 .slider {
     text-align: center;
     margin: 3rem 0;
@@ -209,9 +189,6 @@ body {
     cursor: pointer;
 }
 
-/* -----------------------------------
-   TESTIMONIALS
------------------------------------ */
 .testimonials {
     text-align: center;
     margin-bottom: 120px;
@@ -231,9 +208,7 @@ body {
     box-shadow: 0 0 15px rgba(0,0,0,0.06);
 }
 
-/* -----------------------------------
-   FAQ ACCORDION
------------------------------------ */
+
 .accordion {
     margin-top: 2rem;
     
@@ -257,30 +232,27 @@ body {
     margin-top: 0.5rem;
     display: none;
 }
-/* -----------------------------------
-   CARBON EXPLAINED STYLES
------------------------------------ */
+
 
 .faq-content {
     max-width: 800px;
-    margin: 2rem auto 0; /* Center the content */
+    margin: 2rem auto 0; 
 }
 
 .faq-content h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #008a62; /* Your theme's medium green */
+    color: #008a62;
     
-    /* UPDATED: Increased this from 2.5rem to 3rem for more space */
     margin-top: 3rem; 
     
     margin-bottom: 0.75rem;
-    border-bottom: 2px solid #e0f7e0; /* Faint green underline */
+    border-bottom: 2px solid #e0f7e0; 
     padding-bottom: 0.5rem;
 }
 
 .faq-content h3:first-of-type {
-    margin-top: 0; /* No extra space above the first question */
+    margin-top: 0;
 }
 
 .faq-content p {
@@ -288,12 +260,12 @@ body {
     line-height: 1.7;
     color: #4E6B5F;
     
-    /* UPDATED: Added space after each paragraph */
+   
     margin-bottom: 1.5rem; 
 }
 
 .faq-content p strong {
-    color: #0b3d16; /* Darker green for bold text */
+    color: #0b3d16;
     font-weight: 600;
 }
 
@@ -301,9 +273,7 @@ body {
     color: #008a62;
     font-style: italic;
 }
-/* -----------------------------------
-   DOWNLOAD APP
------------------------------------ */
+
 .download {
     margin-top: 3rem;
     display: flex;
@@ -320,17 +290,12 @@ body {
     text-decoration: none;
 }
 
-/* -----------------------------------
-   MAIN CTA
------------------------------------ */
-/* -----------------------------------
-   MAIN CTA (PROFESSIONAL LOOK)
------------------------------------ */
+
 
 .ready-to-transform-section {
     text-align: center;
     margin: 80px 0;
-    /* This adds the dark green background */
+
     background: linear-gradient(135deg, #1a5d3f, #14914a);
     color: #fff;
     padding: 4rem 2rem;
@@ -340,43 +305,39 @@ body {
 
 .ready-to-transform-section h2 {
     font-size: 2.5rem;
-    color: #d4f4dd; /* Light green text */
+    color: #d4f4dd; 
     margin-bottom: 1rem;
 }
 
 .ready-to-transform-section p {
-    margin: 0 auto 2rem; /* Center paragraph */
+    margin: 0 auto 2rem; 
     font-size: 1.2rem;
     color: #e0f7e0;
-    max-width: 600px; /* Keep line length readable */
+    max-width: 600px; 
 }
 
-/* THIS IS THE CRITICAL RULE 
-  It targets the .btn inside .ready-to-transform-section
-*/
+
 .ready-to-transform-section .btn {
     margin-top: 1rem;
-    background: #fff; /* White button */
-    color: #1a5d3f; /* Dark green text */
+    background: #fff; 
+    color: #1a5d3f; 
     font-weight: 700;
-    padding: 1rem 2rem; /* Make it larger */
+    padding: 1rem 2rem; 
     font-size: 1.1rem;
     border: none; 
-    border-radius: 10px; /* Added border-radius */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Allow padding to apply */
-    transition: all 0.3s ease; /* Smooth hover effect */
+    border-radius: 10px;    
+    text-decoration: none; 
+    display: inline-block; 
+    transition: all 0.3s ease; 
 }
 
 .ready-to-transform-section .btn:hover {
-    background: #d4f4dd; /* Light green on hover */
-    opacity: 1; /* Reset default opacity */
+    background: #d4f4dd; 
+    opacity: 1; 
     color: #1a5d3f;
-    transform: translateY(-3px); /* Add slight lift on hover */
+    transform: translateY(-3px); 
 }
-/* -----------------------------------
-   BACK TO HOME
------------------------------------ */
+
 .back-home {
     display: block;
     text-align: center;
@@ -385,9 +346,7 @@ body {
     font-weight: 600;
 }
 
-/* -----------------------------------
-   FOOTER
------------------------------------ */
+
 .footer {
     text-align: center;
     padding: 1.5rem 0;
@@ -396,9 +355,6 @@ body {
     border-top: 1px solid #eaeaea;
 }
 
-/* -----------------------------------
-   RESPONSIVE
------------------------------------ */
 @media(max-width: 700px) {
     .hero {
         text-align: center;
@@ -411,9 +367,7 @@ body {
         justify-content: center;
     }
 }
-/* -----------------------------------
-    GLOBAL RESET + BASE
------------------------------------ */
+
 * {
     margin: 0;
     padding: 0;
@@ -431,16 +385,14 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
-    color: #0b3d16; /* Dark green for headings */
+    color: #0b3d16; 
 }
 
 p {
-    color: #4E6B5F; /* Soft green-gray for text */
+    color: #4E6B5F; 
 }
 
-/* -----------------------------------
-    FLOATING BACKGROUND CIRCLES
------------------------------------ */
+
 .bg-circle {
     position: absolute;
     border-radius: 50%;
@@ -460,9 +412,7 @@ p {
     100% { transform: translateY(0); }
 }
 
-/* -----------------------------------
-    TOP NAVBAR
------------------------------------ */
+
 .top-nav {
     width: 100%;
     padding: 20px 40px;
@@ -481,22 +431,16 @@ p {
     text-decoration: none;
 }
 .top-nav a.active {
-    color: #2ecc71; /* This is from your original file */
+    color: #2ecc71; 
 }
 
 
-/* -----------------------------------
-    CONTAINER
------------------------------------ */
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 2rem 1rem;
 }
 
-/* -----------------------------------
-    HERO SECTION
------------------------------------ */
 .hero {
     display: flex;
     align-items: center;
@@ -537,7 +481,6 @@ p {
     opacity: 0.8;
 }
 
-/* Hero stats */
 .hero-stats {
     display: flex;
     gap: 2rem;
@@ -553,7 +496,7 @@ p {
     font-size: 0.9rem;
 }
 
-/* Right side visual box */
+
 .visual-box {
     background: white;
     padding: 1rem;
@@ -561,9 +504,7 @@ p {
     box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
-/* -----------------------------------
-    GALLERY
------------------------------------ */
+
 .gallery {
     text-align: center;
     margin-top: 3rem;
@@ -581,9 +522,6 @@ p {
     border-radius: 12px;
 }
 
-/* -----------------------------------
-    COUNTERS
------------------------------------ */
 .counters {
     display: flex;
     justify-content: space-around;
@@ -602,9 +540,7 @@ p {
     color: #00885d;
 }
 
-/* -----------------------------------
-    SLIDER (SUCCESS STORIES)
------------------------------------ */
+
 .slider {
     text-align: center;
     margin: 3rem 0;
@@ -636,9 +572,7 @@ p {
     cursor: pointer;
 }
 
-/* -----------------------------------
-    TESTIMONIALS
------------------------------------ */
+
 .testimonials {
     text-align: center;
     margin-bottom: 120px;

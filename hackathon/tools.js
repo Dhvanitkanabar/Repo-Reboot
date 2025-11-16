@@ -1,11 +1,8 @@
-/* -----------------------------------
-   SOIL ANALYZER FUNCTION
------------------------------------ */
+
 document.addEventListener('DOMContentLoaded', () => {
     
     const analyzeBtn = document.getElementById('analyze-soil-btn');
     
-    // Only run this code if the button exists on the page
     if (analyzeBtn) {
         const nInput = document.getElementById('soil-n');
         const pInput = document.getElementById('soil-p');
@@ -24,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let recommendations = [];
 
-            // Simple "if" logic - you can make this more complex
             if (n < 280) {
                 recommendations.push("<strong>Nitrogen (N) is low.</strong> Consider adding compost or a nitrogen-rich fertilizer.");
             } else {
@@ -43,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 recommendations.push("<strong>Potassium (K) levels are adequate.</strong>");
             }
 
-            // Build the final HTML to show the user
             resultDiv.innerHTML = `
                 <h4>Analysis Results:</h4>
                 <ul style="text-align: left; margin: 1rem 0 0 1rem;">
@@ -56,51 +51,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // ... (Keep your other "DOMContentLoaded" code like counters, calculator, and language here)
 });
-/* -----------------------------------
-    ANIMATED COUNTERS
------------------------------------ */
-document.addEventListener("DOMContentLoaded", () => {
-    // --- COUNTER ANIMATION ---
-    const counters = document.querySelectorAll('.big[data-target]');
-    const speed = 200; // Adjust animation speed (higher = slower)
 
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.big[data-target]');
+    const speed = 200;
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            // Check if the counter is in view
             if (entry.isIntersecting) {
                 const counter = entry.target;
                 
                 const animate = () => {
                     const target = +counter.getAttribute('data-target');
-                    // Remove commas/formatting before parsing
                     const currentText = counter.innerText.replace(/,/g, '');
                     const current = +currentText;
                     const increment = target / speed;
 
                     if (current < target) {
                         counter.innerText = Math.ceil(current + increment).toLocaleString('en-US');
-                        setTimeout(animate, 10); // Run again in 10ms
+                        setTimeout(animate, 10); 
                     } else {
-                        counter.innerText = target.toLocaleString('en-US'); // Set final target with commas
+                        counter.innerText = target.toLocaleString('en-US');
                     }
                 };
                 
-                animate(); // Start the animation
-                observer.unobserve(counter); // Stop observing once animated
+                animate();
+                observer.unobserve(counter); 
             }
         });
     }, {
-        threshold: 0.8 // Start when 80% of the counter is visible
+        threshold: 0.8 
     });
 
-    // Observe each counter
     counters.forEach(counter => {
         observer.observe(counter);
     });
 
-    // --- FAQ ACCORDION ---
     const accItems = document.querySelectorAll('.acc-item');
 
     accItems.forEach(item => {
@@ -109,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const icon = item.querySelector('.acc-icon');
 
         head.addEventListener('click', () => {
-            // Close all other items
             accItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
@@ -118,7 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // Toggle the clicked item
             const isActive = item.classList.toggle('active');
             if (isActive) {
                 body.style.display = 'block';
@@ -130,28 +114,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --- SLIDER (Optional, if you need JS control) ---
-    // This is a simple JS for the slider buttons.
-    // Your HTML has onclick="", but this is a cleaner way.
-    // You can add this if you remove the onclick="" from your HTML.
-
-    /*
-    const sliderTrack = document.querySelector('.slider-track');
-    const controlBtns = document.querySelectorAll('.control-btn');
-
-    if (sliderTrack && controlBtns.length) {
-        controlBtns.forEach(button => {
-            button.addEventListener('click', (e) => {
-                // Get direction from a data-attribute or button value
-                // For this to work, update HTML:
-                // <button class="control-btn" data-dir="-1">‹</button>
-                // <button class="control-btn" data-dir="1">›</button>
-                
-                // const dir = parseInt(e.target.dataset.dir);
-                // const scrollAmount = sliderTrack.clientWidth * 0.8; // Scroll 80%
-                // sliderTrack.scrollBy({ left: scrollAmount * dir, behavior: 'smooth' });
-            });
-        });
-    }
-    */
 });
