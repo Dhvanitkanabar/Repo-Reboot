@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Farmers — Rupiya</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="carbon.css">
+</head>
+<body>
+
+  <!-- Floating circles -->
+  <div class="bg-circle c1" aria-hidden="true"></div>
+  <div class="bg-circle c2" aria-hidden="true"></div>
+  <div class="bg-circle c3" aria-hidden="true"></div>
+
+  <!-- Top Nav -->
+  <header class="navbar">
+        <div class="nav-container">
+            <img src="logo.png" alt="Rupiya Logo" class="logo">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="vision.html">Vision</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+
+
+<main class="container">
+    
+    <div style="padding-top: 2rem;">
+      <h2>Carbon Credits Explained</h2>
+      <p class="lead">A detailed breakdown of our carbon credit program and its benefits.</p>
+    </div>
+
+    <div class="faq-content" style="margin-top: 2rem;">
+      
+      <h3>What is a carbon credit?</h3>
+      <p>A carbon credit is a tradable permit that represents **one tonne (1,000 kg)** of carbon dioxide (CO2) that has been removed from the atmosphere. By practicing regenerative farming, you store carbon in your soil. We verify this stored carbon and sell it as a credit to companies looking to offset their emissions.</p>
+
+      <h3>How does soil organic carbon increase?</h3>
+      <p>Soil organic carbon (SOC) increases when you add more organic matter (like cover crops or crop residue) than you lose. Practices like **no-till farming** and **cover cropping** feed the microbes in the soil, which convert this organic matter into stable carbon, building up your soil's health and fertility over time.</p>
+
+      <h3>How does regenerative farming lock carbon in the soil?</h3>
+      <p>Regenerative farming focuses on soil health. Instead of tilling (which releases carbon), you keep the soil covered. Plants absorb CO2 from the air via photosynthesis. Their roots and the crop residues left on the field decompose into the soil, where a large portion of that carbon becomes stable and is "locked" away for long periods.</p>
+
+      <h3>₹800 income per verified carbon credit</h3>
+      <p>This is an *example* of your potential earnings. The price of carbon credits can change based on the global market. After we verify that your practices have stored one tonne of CO2 (one credit), you will earn a large share of its sale price, providing a new, direct income stream for your farm.</p>
+
+      <h3>5,00,000 hectares target in 3 years</h3>
+      <p>This is our ambitious goal. We aim to bring 500,000 hectares of farmland in India into our regenerative program within the next three years. This scale will generate a massive environmental impact and unlock significant revenue for our partner farmers and FPOs.</p>
+    </div>
+
+    <hr style="margin: 3rem 0;">
+
+    <div class="calculator-section">
+      <h3>Carbon Credit Calculator (Estimate)</h3>
+      <p class="lead">Estimate your potential annual earnings from carbon credits.</p>
+      
+      <div class="calculator-form">
+        <div>
+          <label for="hectares">Total Hectares:</label>
+          <input type="number" id="hectares" placeholder="Enter your farm size in hectares">
+        </div>
+        <div>
+          <label for="practice">Farming Practice:</label>
+          <select id="practice">
+            <option value="no-till">No-Till Farming</option>
+            <option value="cover-crops">Cover Crops & No-Till</option>
+            <option value="full-regen">Full Regenerative (Multi-Practice)</option>
+          </select>
+        </div>
+        <button id="calculate-btn" class="btn" style="width: 100%; margin: 0; padding: 1rem;">Calculate Estimate</button>
+      </div>
+
+      <div id="calculator-result">
+        <p>Your results will appear here.</p>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+
+
+<footer class="site-footer">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+        <div class="section-shape shape3"></div>
+
+        <div class="container footer-wrapper">
+            <div class="footer-brand">
+                <h2>Rupiya</h2>
+                <p>Residue-Free Farming for a Better Tomorrow</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#farmers">Farmers</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Subscribe</h4>
+                <p>Get the latest updates on residue-free farming</p>
+                <form>
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rupiya. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="carbon.js"></script>
+
+</body>
+</html>

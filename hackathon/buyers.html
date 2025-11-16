@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Institutional Buyers — Rupiya</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="farmers.css">
+
+  <style>
+    /* FIX: Hero Image Box */
+    .hero .visual-box {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+    
+    /* Section Structure: Alternating backgrounds */
+    /* .counters, .faq, .ready-to-transform-section {
+        background-color: #fff;
+    } */
+    .sourcing-section, .slider, .how-it-works-section, .download-section, .site-footer {
+        background-color: #f9f9f9;
+    }
+
+    /* Styles for "Your Sourcing, Simplified" section */
+    .sourcing-section {
+        padding: 80px 20px;
+        text-align: center;
+    }
+    .sourcing-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .sourcing-section .section-description {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto 50px auto;
+        line-height: 1.6;
+    }
+    .sourcing-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .sourcing-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+    }
+    .sourcing-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .sourcing-card i {
+        font-size: 2.5rem;
+        color: #2e8b57;
+        margin-bottom: 20px;
+        width: 50px;
+    }
+    .sourcing-card h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 10px;
+    }
+    .sourcing-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+    @media (max-width: 768px) {
+        .sourcing-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Professional "Procurement Process" Slider */
+    .how-it-works-section {
+        padding: 80px 20px;
+    }
+    main.container section.how-it-works-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center !important; 
+    }
+    main.container section.how-it-works-section .section-description {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 800px;
+        line-height: 1.6;
+        text-align: center !important; 
+        margin: 0 auto 50px auto !important; 
+    }
+    .how-it-works-section .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px; 
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .how-it-works-section .step-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px; 
+        text-align: center;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .how-it-works-section .step-card:hover {
+        transform: translateY(-8px); 
+        box-shadow: 0 12px 30px rgba(0,0,0,0.12); 
+    }
+    .how-it-works-section .step-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #2e8b57;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px; 
+    }
+    .how-it-works-section .step-card h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px !important; 
+    }
+    .how-it-works-section .step-card p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+    }
+    @media (max-width: 992px) {
+        .how-it-works-section .steps-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 768px) {
+        .how-it-works-section .steps-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Professional "Trusted by" Slider */
+    section.slider {
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section.slider h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .slider-track {
+        display: flex;
+        gap: 20px;
+    }
+    .slide {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 35px 30px 30px 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        border: 1px solid #e9e9e9;
+        flex: 0 0 320px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        text-align: left;
+    }
+    .slide:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .slide p {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .slide p::before {
+        content: '“';
+        font-family: Georgia, serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #2e8b57;
+        position: absolute;
+        top: -25px;
+        left: -10px;
+        line-height: 1;
+    }
+    .slide h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #333;
+        text-align: right;
+        margin-top: 15px;
+        position: relative;
+    }
+    .slide h4::before {
+        content: '— ';
+        color: #2e8b57;
+        font-weight: 700;
+    }
+    .slider-controls {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .control-btn {
+        position: relative;
+        top: 0; left: 0; right: 0;
+        transform: none;
+        background-color: #2e8b57;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+    .control-btn:hover {
+        background-color: #256d44;
+        transform: scale(1.1);
+    }
+
+    /* FIX: FAQ Section */
+    section.faq {
+        padding: 80px 20px;
+    }
+    main.container section.faq h2 { /* Used to be h3 */
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333 !important;
+        text-align: center !important;
+        margin-bottom: 50px;
+    }
+    .accordion .acc-head h4 {
+        color: #333 !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+    }
+    .accordion {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-circle c1" aria-hidden="true"></div>
+  <div class="bg-circle c2" aria-hidden="true"></div>
+  <div class="bg-circle c3" aria-hidden="true"></div>
+
+  <div class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="fpos.html">FPOs</a>
+    <a class="active" href="buyers.html">Buyers</a>
+    <a href="investors.html">Investors</a>
+    <a href="farmers.html">Farmer</a>
+  </div>
+
+<main class="container">
+
+    <section class="hero">
+      <div class="left">
+        <h1>A Reliable Supply Chain for Premium, Traceable Produce</h1>
+        <p class="lead">Access consistent, high-quality, residue-free crops with 100% farm-to-shelf traceability, sourced directly from our verified network.</p>
+
+        <div class="hero-cta">
+          <a class="btn" href="contact.html">Procure With Us</a>
+          <a class="btn secondary" href="#process">Our Process</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat"><div class="num">10k+</div><div class="label">Tonnes Supplied</div></div>
+          <div class="stat"><div class="num">100%</div><div class="label">Traceability</div></div>
+          <div class="stat"><div class="num">50+</div><div class="label">Crop Portfolio</div></div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="visual-box">
+          <img src="assets/chain illustration.jpeg" alt="Supply chain illustration" style="width:70%">
+        </div>
+      </div>
+    </section>
+
+    <section id="sourcing-simplified" class="sourcing-section">
+        <h2>Your Sourcing, Simplified</h2>
+        <p class="section-description">We provide a transparent, reliable, and tech-enabled procurement solution.</p>
+        
+        <div class="sourcing-grid">
+            <div class="sourcing-card">
+                <i class="fas fa-check-circle"></i>
+                <h3>Quality Consistency</h3>
+                <p>All produce is grown using standardized protocols and undergoes multi-level quality checks, ensuring consistent size, grade, and residue-free status.</p>
+            </div>
+            <div class="sourcing-card">
+                <i class="fas fa-qrcode"></i>
+                <h3>End-to-End Traceability</h3>
+                <p>Our platform provides full farm-to-shelf traceability. Scan a QR code to see the full journey, from the farmer's plot to your facility.</p>
+            </div>
+            <div class="sourcing-card">
+                <i class="fas fa-stamp"></i>
+                <h3>Certifications</h3>
+                <p>We manage all necessary documentation and provide produce certified with GlobalG.A.P., NPOP, Fairtrade, and other standards as required.</p>
+            </div>
+             <div class="sourcing-card">
+                <i class="fas fa-boxes"></i>
+                <h3>Diverse Crop Portfolio</h3>
+                <p>Access a wide range of commodities, including grains, spices, fresh fruits & vegetables, and specialty crops from across our national network.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="counters">
+      <div class="counter"><div class="big" data-target="500000">0</div><div class="small">Acres in Network</div></div>
+      <div class="counter"><div class="big" data-target="10000">0</div><div class="small">Tonnes of Produce Supplied</div></div>
+      <div class="counter"><div class="big" data-target="50">0</div><div class="small">Crops in Portfolio</div></div>
+      <div class="counter"><div class="big" data-target="100">0</div><div class="small">Traceability Guaranteed (%)</div></div>
+    </section>
+
+    <section id="process" class="how-it-works-section">
+      <div class="container">
+        <h2>Our Procurement Process</h2>
+        <p class="section-description">A seamless, transparent process from your PO to final delivery.</p>
+        
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Share Requirements</h3>
+            <p>Submit your Purchase Order with volume, quality specs, and delivery schedule.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Farm-Level Sourcing</h3>
+            <p>We allocate your order to our verified FPOs and farmers using our platform.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>QA & Aggregation</h3>
+            <p>First-mile quality checks are done at farm gates before aggregation at our centers.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Lab Testing & Cert.</h3>
+            <p>Produce is sent for third-party lab testing to confirm residue-free status and quality.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <h3>Deliver & Trace</h3>
+            <p>Receive your shipment with a complete traceability report accessible via QR code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slider">
+      <h2>Trusted by Industry Leaders</h2>
+      <div class="slider-track">
+        <div class="slide"><p>"Rupiya's consistency in quality and supply is unmatched."</p><h4>— Head of Sourcing, ITC</h4></div>
+        <div class="slide"><p>"The traceability report is a game-changer for our brand."</p><h4>— Procurement Head, Reliance Retail</h4></div>
+        <div class="slide"><p>"Finally, a reliable source for organic produce at scale."</p><h4>— Supply Chain Manager, Mother Dairy</h4></div>
+        <div class="slide"><p>"Their platform makes procurement simple and transparent."</p><h4>— VP Sourcing, Major Exporter</h4></div>
+      </div>
+
+      <div class="slider-controls">
+        <button class="control-btn">‹</button>
+        <button class="control-btn">›</button>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2> <div class="accordion">
+
+        <div class="acc-item">
+          <div class="acc-head"><h4>What certifications can you provide?</h4><div class="acc-icon">+</div></div>
+          <div class="acc-body">We can provide produce that is NPOP, NOP, GlobalG.A.P., and Fairtrade certified, based on your specific requirements.</div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-head"><h4>How do you guarantee traceability?</h4><div class="acc-icon">+</div></div>
+          <div class="acc-body">Our technology platform captures data from the farm level (plot mapping, inputs used) all the way through aggregation, processing, and final shipment.</div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-head"><h4>Can you handle large-volume, multi-location contracts?</h4><div class="acc-icon">+</div></div>
+          <div class="acc-body">Yes. Our strength lies in our large, distributed network of over 200 FPOs, allowing us to manage large, consistent supply contracts across India.</div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-head"><h4>What is the typical lead time?</h4><div class="acc-icon">+</div></div>
+          <div class="acc-body">Lead time depends on the crop, required certifications, and volume. For spot buys, we can ship from our centers immediately. For contract farming, we align with the crop calendar.</div>
+        </div>
+      </div>
+    </section>
+
+ <section class="download-section">
+    <div class="container download-inner">
+        <div class="phone-mock">
+            <img src="assets/playstore.png" alt="Phone preview">
+        </div>
+
+        <div class="app-ctas">
+            <h2>Get the Rupiya App</h2>
+            <p>Advisory & tracking — always with you.</p>
+
+            <div class="store-row">
+                <a class="store-btn google-play" href="#">Google Play</a>
+                <a class="store-btn app-store" href="#">App Store</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ready-to-transform-section">
+  <div class="container">
+    <h2>Secure Your Supply Chain Today.</h2>
+    <p>Partner with Rupiya for consistent, traceable, and high-quality produce at scale.</p>
+    <a class="btn" href="contact.html">Contact Our Sourcing Team</a>
+  </div>
+</section>
+
+<div class="back-home-row container">
+  <a class="back-home" href="index.html">← Home</a>
+</div>
+</main>
+
+<footer class="site-footer">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+        <div class="section-shape shape3"></div>
+
+        <div class="container footer-wrapper">
+            <div class="footer-brand">
+                <h2>Rupiya</h2>
+                <p>Residue-Free Farming for a Better Tomorrow</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="farmers.html">Farmers</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Subscribe</h4>
+                <p>Get the latest updates on residue-free farming</p>
+                <form>
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rupiya. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="buyers.js"></script> </body>
+</html>

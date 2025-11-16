@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FPOs — Rupiya</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="farmers.css">
+
+  <style>
+    /* =============================== */
+    /* =  FIX FOR HERO IMAGE BOX     = */
+    /* =============================== */
+    .hero .visual-box {
+        background: none; /* Removes the white box */
+        box-shadow: none; /* Removes the shadow */
+        border: none; /* Removes any border */
+        padding: 0; /* Removes padding */
+    }
+    
+    /* Section Structure: Alternating backgrounds */
+   
+    /* .counters, .faq, .ready-to-transform-section {
+        background-color: #fff;
+    } */
+    /* .empower-section, .slider, .how-it-works-section, .download-section, .site-footer {
+        background-color: #f9f9f9;
+    } */
+
+    /* Styles for the "Empower" section */
+    .empower-section {
+        padding: 80px 20px;
+        text-align: center;
+    }
+    .empower-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .empower-section .section-description {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto 50px auto;
+        line-height: 1.6;
+    }
+    .empower-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .empower-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+    }
+    .empower-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .empower-card i {
+        font-size: 2.5rem;
+        color: #2e8b57;
+        margin-bottom: 20px;
+        width: 50px;
+    }
+    .empower-card h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 10px;
+    }
+    .empower-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+    @media (max-width: 768px) {
+        .empower-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Professional FPO Success Stories Slider */
+    section.slider {
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section.slider h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .slider-track {
+        display: flex;
+        gap: 20px;
+    }
+    .slide {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 35px 30px 30px 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        border: 1px solid #e9e9e9;
+        flex: 0 0 320px; /* Fixed width */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        text-align: left;
+    }
+    .slide:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .slide p {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .slide p::before {
+        content: '“';
+        font-family: Georgia, serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #2e8b57;
+        position: absolute;
+        top: -25px;
+        left: -10px;
+        line-height: 1;
+    }
+    .slide h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #333;
+        text-align: right;
+        margin-top: 15px;
+        position: relative;
+    }
+    .slide h4::before {
+        content: '— ';
+        color: #2e8b57;
+        font-weight: 700;
+    }
+    .slider-controls {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .control-btn {
+        position: relative;
+        top: 0; left: 0; right: 0;
+        transform: none;
+        background-color: #2e8b57;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+    .control-btn:hover {
+        background-color: #256d44;
+        transform: scale(1.1);
+    }
+
+    /* Polished "How it Works" Steps */
+    /* === FINAL CSS FOR "Our Partnership Journey" === */
+
+.how-it-works-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+/* Strong selector to center title and description */
+main.container section.how-it-works-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center !important; 
+}
+
+main.container section.how-it-works-section .section-description {
+    font-size: 1.125rem;
+    color: #666;
+    max-width: 800px;
+    line-height: 1.6;
+    text-align: center !important; 
+    margin: 0 auto 50px auto !important; 
+}
+
+.how-it-works-section .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.how-it-works-section .step-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px; 
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.how-it-works-section .step-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12); 
+}
+
+.how-it-works-section .step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2e8b57; /* Dark green circle */
+    color: #fff; /* White number */
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px; 
+}
+
+.how-it-works-section .step-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333; /* Dark text */
+    /* THIS IS THE FIX YOU ASKED FOR: */
+    margin-bottom: 15px !important; 
+}
+
+.how-it-works-section .step-card p {
+    font-size: 0.95rem;
+    color: #666; /* Grey text */
+    line-height: 1.6;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+    .how-it-works-section .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .how-it-works-section .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+  </style>
+
+</head>
+<body>
+
+  <div class="bg-circle c1" aria-hidden="true"></div>
+  <div class="bg-circle c2" aria-hidden="true"></div>
+  <div class="bg-circle c3" aria-hidden="true"></div>
+
+  <div class="top-nav">
+    <a href="index.html">Home</a>
+    <a class="active" href="fpos.html">FPO</a>
+    <a href="buyers.html">Buyers</a>
+    <a href="investors.html">Investors</a>
+    <a href="farmers.html">Farmer</a>
+  </div>
+ 
+
+  <main class="container">
+
+      <section class="hero">
+        <div class="left">
+          <h1>Partnering with FPOs for Market-Scale Impact</h1>
+          <p class="lead">A unified platform for FPOs to manage members, aggregate produce, access premium markets, and ensure end-to-end traceability.</p>
+
+          <div class="hero-cta">
+            <a class="btn" href="contact.html">Partner as an FPO</a>
+            <a class="btn secondary" href="#empower">Our FPO Solutions</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat"><div class="num">200+</div><div class="label">FPOs Onboarded</div></div>
+            <div class="stat"><div class="num">50k+</div><div class="label">Farmer Network</div></div>
+            <div class="stat"><div class="num">100Cr+</div><div class="label">Market Value Unlocked</div></div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div classNT="visual-box"> <!-- The white box style is now removed by the CSS above -->
+            <img src="assets/fpo.jpeg" alt="FPO collaboration illustration" style="width:70%">
+          </div>
+        </div>
+      </section>
+
+      <section id="empower" class="empower-section">
+          <h2>How Rupiya.app Empowers FPOs</h2>
+          <p class="section-description">We provide a complete ecosystem for FPOs to grow, manage, and monetize their operations.</p>
+          
+          <div class="empower-grid">
+              <div class="empower-card">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                  <h3>Training & Support</h3>
+                  <p>Comprehensive training modules for your member farmers on residue-free practices, certification, and technology adoption.</p>
+              </div>
+              <div class="empower-card">
+                  <i class="fas fa-leaf"></i>
+                  <h3>Carbon Credit Revenue</h3>
+                  <p>Unlock new revenue streams by verifying and selling carbon credits generated from your members' sustainable practices.</p>
+              </div>
+              <div class="empower-card">
+                  <i class="fas fa-truck-moving"></i>
+                  <h3>Buy-Back & Supply Chain</h3>
+                  <p>Full buy-back assurance for verified produce, plus integrated logistics and warehousing solutions for seamless aggregation.</p>
+              </div>
+              <div class="empower-card">
+                  <i class="fas fa-handshake"></i>
+                  <h3>Collaboration Benefits</h3>
+                  <p>Gain access to premium buyers, discounted input linkages, and a digital platform to manage your entire FPO operations.</p>
+              </div>
+          </div>
+      </section>
+
+      <section class="counters">
+        <div class="counter"><div class="big" data-target="200">0</div><div class="small">FPOs Empowered</div></div>
+        <div class="counter"><div class="big" data-target="5000">0</div><div class="small">Tonnes Aggregated</div></div>
+        <div class="counter"><div class="big" data-target="50">0</div><div class="small">Premium Buyers Connected</div></div>
+        <div class="counter"><div class="big" data-target="25">0</div><div class="small">Input Cost Reduction (%)</div></div>
+      </section>
+
+      <section class="slider">
+        <h2>FPO Success Stories</h2>
+        <div class="slider-track">
+            <div class="slide"><p>"Rupiya streamlined our member management."</p><h4>— CEO, Sahyadri FPC</h4></div>
+            <div class="slide"><p>"We accessed new export markets."</p><h4>— Manager, Ganga FPO</h4></div>
+            <div class="slide"><p>"Our input procurement is now 20% cheaper."</p><h4>— Director, Kissan Agri</h4></div>
+            <div class="slide"><p>"Digital traceability got us better buyers."</p><h4>— CEO, Malwa FPC</h4></div>
+            <div class="slide"><p>"We solved our logistics issues instantly."</p><h4>— Manager, Deccan FPO</h4></div>
+            <div class="slide"><p>"Now we get fair, transparent pricing."</p><h4>— Director, Godavari FPC</h4></div>
+        </div>
+
+        <div class="slider-controls">
+            <!-- Removed onclick="" -->
+            <button class="control-btn">‹</button>
+            <button class="control-btn">›</button>
+        </div>
+      </section>
+
+      <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+
+          <div class="acc-item">
+            <div class="acc-head"><h4>How do we access carbon credit revenue?</h4><div class="acc-icon">+</div></div>
+            <div class="acc-body">Rupiya manages the entire process: verification (MRV), documentation, and sale of credits on your behalf, sharing the revenue directly with your FPO and members.</div>
+          </div>
+
+          <div class="acc-item">
+            <div class="acc-head"><h4>What is included in the 'Training Support'?</h4><div class="acc-icon">+</div></div>
+            <div class="acc-body">We provide on-ground and digital training on Good Agricultural Practices (GAPs), residue-free protocols, digital literacy, and market quality standards.</div>
+          </div>
+
+          <div class="acc-item">
+            <div class="acc-head"><h4>How does the buy-back solution work?</h4><div class="acc-icon">+</div></div>
+            <div class="acc-body">We provide a formal buy-back agreement for all produce that meets our pre-defined quality standards, guaranteeing you a premium market.</div>
+          </div>
+
+          <div class="acc-item"> 
+            <div class="acc-head"><h4>What technology platform do you provide?</h4><div class="acc-icon">+</div></div>
+            <div class="acc-body">You get access to our FPO Dashboard to manage members, track farm activities, aggregate produce, and manage payments, all in one place.</div>
+          </div>
+          
+        </div>
+      </section>
+      
+<section class="download-section">
+    <div class="container download-inner">
+        <div class="phone-mock">
+            <img src="assets/playstore.png" alt="Phone preview">
+        </div>
+        <div class="app-ctas">
+            <h2>Get the Rupiya App</h2>
+            <p>Advisory & tracking — always with you.</p>
+            <div class="store-row">
+                <a class="store-btn google-play" href="#">Google Play</a>
+                <a class="store-btn app-store" href="#">App Store</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="how" class="how-it-works-section">
+  <div class="container">
+    <h2>Our Partnership Journey</h2>
+    <p class="section-description">A simple, transparent process for mutual growth and success.</p>
+    
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Register & Onboard</h3>
+        <p>Sign an MoU and integrate your FPO into our digital platform.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Member Training</h3>
+        <p>We deploy on-ground teams to train your farmers in sustainable practices.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Practice & Monitor</h3>
+        <p>Farmers implement practices, monitored via our app for verification.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Aggregate & Sell</h3>
+        <p>Aggregate the verified produce for our buy-back and supply chain.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">5</div>
+        <h3>Share Revenue</h3>
+        <p>Receive premium payments for produce and shared revenue from carbon credits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ready-to-transform-section">
+  <div class="container">
+    <h2>Ready to scale your FPO?</h2>
+    <p>Join our network to unlock new markets and revenue for your members.</p>
+    <a class="btn" href="contact.html">Partner With Us</a>
+  </div>
+</section>
+
+<div class="back-home-row container">
+  <a class="back-home" href="index.html">← Home</a>
+</div>
+</main> 
+<footer class="site-footer">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+        <div class="section-shape shape3"></div>
+
+        <div class="container footer-wrapper">
+            <div class="footer-brand">
+                <h2>Rupiya</h2>
+                <p>Residue-Free Farming for a Better Tomorrow</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="farmers.html">Farmers</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Subscribe</h4>
+                <p>Get the latest updates on residue-free farming</p>
+                <form>
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rupiya. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- ADDED: ScrollReveal Animation Library -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!-- This single JS file runs all logic for both pages -->
+    <script src="farmers.js"></script>
+</body>
+</html>

@@ -1,0 +1,1942 @@
+/* === FONT IMPORT === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+/* === GLOBAL === */
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f9fff9; 
+    color: #4E6B5F; 
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* === NAVBAR === */
+.navbar {
+    background: #ffffff;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #dfffe0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.logo {
+    height: 40px; 
+}
+
+.navbar nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: #0c4f20;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.navbar nav a:hover {
+    color: #27a239;
+}
+
+/* === HERO SECTION === */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 160px 20px 140px;
+    background: linear-gradient(135deg, #e8f9e9 0%, #ffffff 60%);
+    overflow: hidden;
+    z-index: 1; 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; 
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #0a3d15;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #1a4a24;
+    max-width: 550px;
+    margin: 0 auto 30px;
+}
+
+.hero-btn {
+    padding: 14px 32px;
+    background: #0f7d2e;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: 0.25s;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+    background: #0d6c27;
+}
+
+/* Hero Floating Icons */
+.floating-icons {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.float-item {
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.95;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 80px; 
+    height: 80px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Icon Positions */
+.f1 { top: 20%; left: 18%; animation-delay: 0s; }
+.f2 { top: 65%; left: 75%; animation-delay: 1s; }
+.f3 { top: 30%; left: 70%; animation-delay: 0.5s; }
+.f4 { top: 70%; left: 20%; animation-delay: 1.5s; }
+
+/* Floating Animation for hero icons */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0px); }
+}
+
+/* === GENERAL FLOATING SHAPE STYLES FOR SECTIONS === */
+.section-shape {
+    position: absolute;
+    border-radius: 50%;
+    /* === FIX: Increased opacity === */
+    opacity: 0.3; 
+    z-index: 0; /* Behind content */
+    animation: floatShape 15s ease-in-out infinite;
+}
+
+/* Animation for section shapes */
+@keyframes floatShape {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-30px) translateX(20px) rotate(15deg);
+    }
+    50% {
+        transform: translateY(20px) translateX(-20px) rotate(-10deg);
+    }
+    75% {
+        transform: translateY(-10px) translateX(10px) rotate(5deg);
+    }
+}
+
+/* === FLOW SECTION === */
+.flow-section {
+    padding: 100px 20px;
+    background: #f9fff9;
+    text-align: center;
+    position: relative; 
+    z-index: 1;
+    overflow: hidden; 
+}
+
+/* Shapes for Flow Section */
+.flow-section .section-shape.shape1 {
+    width: 90px; height: 90px;
+    /* === FIX: Darker color === */
+    background: #c7edd0; 
+    top: 15%; left: 10%;
+    animation-delay: 0s;
+}
+.flow-section .section-shape.shape2 {
+    width: 70px; height: 70px;
+    /* === FIX: Darker color === */
+    background: #a0e6a0;
+    bottom: 20%; right: 15%;
+    animation-delay: 4s;
+}
+
+.section-title {
+    font-size: 2.5rem; 
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: #0b3d16;
+}
+
+.flow-container {
+    /* Standard Flexbox setup */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; 
+    
+    /* === CRITICAL OVERRIDES === */
+    /* 1. Force all items onto a single line */
+    flex-wrap: nowrap !important; 
+    
+    /* 2. Give the container infinite width so it never wraps */
+    max-width: none !important; 
+    width: fit-content; /* Ensure container only takes necessary space */
+    
+    /* 3. Allow horizontal scrolling if the flow exceeds the screen width */
+    overflow-x: auto; 
+    padding: 0 40px; /* Add padding for visual spacing */
+    
+    /* Ensure child items do not shrink */
+    min-width: 100%; 
+    
+    /* --- End Critical Overrides --- */
+
+    margin: auto;
+    position: relative; 
+    z-index: 1;
+}
+
+/* Ensure the cards themselves cannot shrink */
+.flow-card {
+    background: white;
+    width: 220px;
+    padding: 28px 20px;
+    border-radius: 16px;
+    box-shadow: 0px 6px 22px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* CRITICAL: Must not shrink */
+    flex-shrink: 0; 
+}
+
+.flow-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0px 8px 28px rgba(0,0,0,0.12);
+}
+
+.flow-icon {
+    width: 70px;
+    margin-bottom: 14px;
+}
+
+.flow-card h3 {
+    font-size: 1.25rem;
+    color: #0a4b1a;
+    margin-bottom: 10px;
+}
+
+.flow-card p {
+    font-size: 0.95rem;
+    color: #2a5a33;
+    line-height: 1.5;
+}
+
+.flow-arrow {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0f7d2e;
+}
+/* ===================================
+   9. FINANCE SECTION (FINAL 2x2 + 1 Layout)
+   =================================== */
+
+.finance-section {
+    background: linear-gradient(135deg, #f0fff0, #e0f7e0);
+    padding: 100px 40px; 
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.finance-section h2 {
+    color: #1a5d3f;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.finance-sub {
+    font-size: 1.1rem;
+    margin: 0 auto 50px;
+    max-width: 800px;
+    color: #4E6B5F;
+    line-height: 1.6;
+}
+
+/* --- THE GRID FIX --- */
+.finance-grid {
+    display: grid;
+    /* Create 2 columns of equal width and center the entire grid */
+    grid-template-columns: repeat(2, minmax(280px, 1fr)); 
+    gap: 30px;
+    max-width: 1000px; /* Max width for the 2-column layout */
+    margin: 0 auto;
+}
+
+/* Rule for the 5th Card: Make it span both columns and center its content */
+.fin-card-fifth {
+    /* Span across the full 2 columns */
+    grid-column: span 2; 
+    
+    /* Limit max width to prevent it from stretching too wide in the center */
+    max-width: 485px; 
+    
+    /* Center the box itself within the 2-column space */
+    justify-self: center; 
+    align-self: start; 
+}
+
+/* --- Base Card Styles (Wider and Professional) --- */
+.fin-card {
+    background: white;
+    padding: 30px 25px; 
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e0f7e0;
+    
+    /* Animation/Hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Internal content centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 220px; 
+}
+
+.fin-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.fin-card img {
+    width: 70px; 
+    height: 70px;
+    margin-bottom: 20px; 
+}
+
+.fin-card h3 {
+    color: #14914a;
+    font-size: 1.55rem;
+    margin-bottom: 12px;
+}
+
+.fin-card p {
+    font-size: 1.05rem;
+    color: #4E6B5F;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Stack all cards on mobile (1 column) */
+    .finance-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px; 
+        gap: 15px;
+    }
+    
+    /* Reset the 5th card's span and center it normally */
+    .fin-card-fifth {
+        grid-column: span 1; 
+        max-width: 100%;
+        justify-self: stretch;
+    }
+}
+
+/* === STATS SECTION === */
+.stats {
+    position: relative;
+    padding: 100px 20px;
+    background: #ffffff;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Shapes for Stats Section */
+.stats .section-shape.shape1 {
+    width: 80px; height: 80px;
+    /* === FIX: Visible color on white bg === */
+    background: #e0f7e0; 
+    top: 10%; right: 12%;
+    animation-delay: 1s;
+}
+.stats .section-shape.shape2 {
+    width: 60px; height: 60px;
+    /* === FIX: Visible color on white bg === */
+    background: #d4f4dd;
+    bottom: 15%; left: 18%;
+    animation-delay: 5s;
+}
+
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-box {
+    background: #f5fff7;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 280px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.stat-box:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.12);
+}
+
+.stat-box h3 {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+    color: #0a3d15;
+}
+
+.stat-box p {
+    color: #1b4a25;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+
+/* === FINANCE SECTION === */
+.finance-section {
+    background: linear-gradient(135deg, #f0fff0, #e0f7e0);
+    padding: 100px 40px; 
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Shapes for Finance Section (These were already good) */
+.finance-section .section-shape.shape1 {
+    width: 110px; height: 110px;
+    background: #a0e6a0; 
+    top: 10%; left: 5%;
+    animation-delay: 0s;
+}
+.finance-section .section-shape.shape2 {
+    width: 85px; height: 85px;
+    background: #6fcf97; 
+    bottom: 20%; right: 8%;
+    animation-delay: 4s;
+}
+
+.finance-section h2 {
+    font-size: 2.5rem; 
+    color: #1a5d3f;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.finance-sub {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #4E6B5F;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.finance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.fin-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.fin-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.fin-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.fin-card h3 {
+    color: #14914a;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.fin-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4E6B5F;
+}
+
+/* === AUDIENCE SECTION === */
+.audience-section {
+    background: #ffffff; 
+    padding: 100px 40px; 
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Shapes for Audience Section */
+.audience-section .section-shape.shape1 {
+    width: 95px; height: 95px;
+    /* === FIX: Visible color on white bg === */
+    background: #e0f7e0;
+    top: 20%; left: 10%;
+    animation-delay: 1s;
+}
+.audience-section .section-shape.shape2 {
+    width: 75px; height: 75px;
+    /* === FIX: Visible color on white bg === */
+    background: #d4f4dd; 
+    bottom: 15%; right: 12%;
+    animation-delay: 5s;
+}
+
+.audience-section h2 {
+    font-size: 2.5rem; 
+    color: #1a5d3f;
+    margin-bottom: 50px;
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.aud-card {
+    background: #f9fff9; 
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+    text-decoration: none;
+    color: #1a5d3f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e0f7e0;
+}
+
+.aud-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+    background: #ffffff;
+}
+
+.aud-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #14914a;
+}
+
+.aud-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4E6B5F;
+}
+
+/* === CONTACT SECTION === */
+.contact-section {
+    background: linear-gradient(135deg, #e0f7e0, #f0fff0);
+    padding: 100px 20px; 
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Shapes for Contact Section */
+.contact-section .section-shape.shape1 {
+    width: 100px; height: 100px;
+    /* === FIX: Darker color === */
+    background: #a0e6a0;
+    top: 5%; left: 8%;
+    animation-delay: 0s;
+}
+.contact-section .section-shape.shape2 {
+    width: 70px; height: 70px;
+    /* === FIX: Darker color === */
+    background: #c7edd0;
+    bottom: 10%; right: 15%;
+    animation-delay: 2s;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem; 
+    margin-bottom: 40px;
+    color: #1a5d3f;
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; 
+    position: relative;
+    z-index: 1;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Contact Cards */
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.contact-cards .card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-cards .card:hover {
+    transform: translateY(-8px); 
+}
+
+.contact-cards i {
+    font-size: 2rem;
+    color: #1a5d3f;
+    margin-bottom: 10px;
+}
+
+/* Contact Form */
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    flex: 2; 
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px; 
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contact-form button {
+    background: #1a5d3f;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 600;
+}
+
+.contact-form button:hover {
+    background: #14914a;
+}
+
+/* === FOOTER === */
+.site-footer {
+    background: linear-gradient(135deg, #1a5d3f, #14914a);
+    color: #fff;
+    padding: 80px 40px 30px; 
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Shapes for Footer (These are light on a dark bg, so they are fine) */
+.site-footer .section-shape.shape1 {
+    width: 80px; height: 80px;
+    background: rgba(212, 244, 221, 0.2); 
+    top: 10px; left: 20px;
+    animation-delay: 0s;
+}
+
+.site-footer .section-shape.shape2 {
+    width: 50px; height: 50px;
+    background: rgba(175, 235, 194, 0.2);
+    bottom: 30px; right: 50px;
+    animation-delay: 3s;
+}
+
+.site-footer .section-shape.shape3 {
+    width: 60px; height: 60px;
+    background: rgba(224, 247, 224, 0.2);
+    top: 50px; right: 100px;
+    animation-delay: 5s;
+}
+
+
+.footer-wrapper,
+.footer-bottom {
+    position: relative;
+    z-index: 2; 
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.footer-brand h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #d4f4dd;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    color: #e0f7e0;
+    line-height: 1.5;
+}
+
+/* Quick Links */
+.footer-links h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #e0f7e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+}
+
+/* Newsletter */
+.footer-newsletter h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.footer-newsletter p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-newsletter input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    flex: 1;
+    min-width: 150px;
+    font-family: "Inter", sans-serif;
+}
+
+.footer-newsletter button {
+    background: #d4f4dd;
+    color: #1a5d3f;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 600;
+}
+
+.footer-newsletter button:hover {
+    background: #ffffff;
+}
+
+/* Socials */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-socials a {
+    color: #e0f7e0;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #ffffff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0 0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.9rem;
+    color: #d4f4dd;
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
+
+@media (max-width: 900px) {
+    /* Contact */
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    .contact-cards {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .contact-cards .card {
+        flex: 1;
+    }
+    
+    /* Footer */
+    .footer-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-newsletter form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+    
+    /* Carbon */
+    .carbon-section {
+        text-align: center;
+    }
+    .carbon-graphic img {
+        width: 80%;
+    }
+}
+
+/* --- 1. FLOW SECTION: Container for horizontal scrolling --- */
+.flow-section {
+    padding: 100px 0 !important;
+    background: #f9fff9;
+    text-align: center;
+    position: relative; 
+    z-index: 1;
+    overflow-x: auto !important; /* CRITICAL: Allows scrolling */
+    overflow-y: hidden;
+    white-space: nowrap !important; /* CRITICAL: Forces ALL content onto one line */
+}
+
+/* --- 2. FLOW CONTAINER: Use a standard block or minimal flex (redundant now due to white-space) --- */
+.flow-container {
+    /* We are now using the parent .flow-section and the card styles to control layout */
+    /* Ensure it centers the content */
+    text-align: center !important; 
+    padding: 0 40px; 
+    margin: 0 auto;
+    max-width: 100%;
+    scrollbar-width: none;
+    width: max-content !important; 
+    max-width: none !important;
+    display: block !important; /* Treat as a standard block to avoid flex conflicts */
+}
+
+
+/* --- 3. FLOW CARD: CRITICAL: Force horizontal display and prevent wrapping --- */
+.flow-card {
+    background: white;
+    width: 220px;
+    padding: 28px 20px;
+    border-radius: 16px;
+    box-shadow: 0px 6px 22px rgba(0,0,0,0.08);
+    text-align: center;
+    
+    /* CRITICAL FIXES FOR HORIZONTAL LAYOUT */
+    display: inline-block !important; /* Forces side-by-side layout */
+    white-space: normal !important; /* Keeps text wrapping inside the card */
+    vertical-align: top; /* Aligns cards to the top */
+    
+    /* Add margin to replace the old 'gap' property */
+    margin: 0 15px !important; 
+    
+    /* Ensure no shrinking */
+    flex-shrink: 0 !important; 
+}
+
+/* --- 4. FLOW ARROW: Ensure arrows are horizontal and spaced correctly --- */
+.flow-arrow {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0f7d2e;
+    
+    /* CRITICAL FIXES */
+    display: inline-block !important; /* Treat as horizontal item */
+    transform: none !important; /* Remove rotation */
+    vertical-align: middle !important; /* Centers the arrow vertically with the cards */
+    margin: 0 10px !important;
+}
+@media (max-width: 600px) {
+    /* Contact */
+    .contact-cards {
+        flex-direction: column;
+    }
+    
+    /* Hero */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .floating-icons {
+        display: none; /* Hide hero icons on small screens */
+    }
+    
+    /* Headings */
+    .section-title,
+    .carbon-text h2,
+    .finance-section h2,
+    .audience-section h2,
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    /* Hide shapes on mobile for performance */
+    .section-shape {
+        display: none;
+    }
+}
+/* -----------------------------------
+   APP FEATURES SECTION
+----------------------------------- */
+.app-features-section {
+    /* Uses your light green background */
+    background: #f4fdf9; 
+    padding: 4rem 0;
+    margin-top: 4rem;
+}
+
+.feature-image-wrapper {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.feature-image-wrapper img {
+    width: 100%;
+    /* Set a max-width to prevent them from becoming too large */
+    max-width: 1000px; 
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+/* -----------------------------------
+   APP FEATURES SECTION (HEXAGONS)
+----------------------------------- */
+
+.features-section {
+    padding: 4rem 0;
+    /* Uses your light green background */
+    background: #f4fdf9; 
+    margin-top: 4rem;
+    overflow: hidden; /* To contain hexagon shapes */
+}
+
+/* Base Hexagon Style */
+.hexagon {
+    position: relative;
+    background-color: #0f7d2e; /* Your primary green */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    /* This creates the hexagon shape */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.hexagon:hover {
+    transform: scale(1.05);
+    background-color: #0d6c27; /* Darker green on hover */
+}
+
+/* --- Section 1: Large Hexagons --- */
+.features-hero {
+    margin-bottom: 6rem;
+}
+
+.features-hero-title {
+    text-align: right;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+}
+
+.features-hero-title h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4E6B5F; /* Soft text color */
+}
+
+.hexagon-grid-large {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 900px;
+    margin: auto;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.large-hex {
+    width: 100%;
+    /* Creates a perfect hexagon by maintaining aspect ratio */
+    aspect-ratio: 1 / 1.15; 
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.large-hex img {
+    width: 60%;
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.large-hex h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.large-hex p {
+    color: #d4f4dd; /* Light green text */
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Stagger the hexagons */
+.large-hex.hex-2 {
+    transform: translateY(3rem);
+}
+
+/* --- Section 2: Small Hexagons --- */
+.features-grid-small {
+    display: grid;
+    /* Creates 3 columns */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 4rem auto 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.small-hex {
+    width: 90px;
+    height: 100px;
+    flex-shrink: 0; /* Prevents hexagon from shrinking */
+    padding: 1rem;
+}
+
+.small-hex img {
+    width: 100%;
+    max-width: 45px;
+}
+
+.feature-text h3 {
+    font-size: 1.2rem;
+    color: #0b3d16;
+    margin-bottom: 0.25rem;
+}
+
+.feature-text p {
+    font-size: 1rem;
+    color: #4E6B5F;
+    margin-bottom: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .hexagon-grid-large {
+        grid-template-columns: 1fr; /* Stack large hexagons */
+        gap: 2rem;
+        max-width: 300px; /* Constrain width */
+    }
+    
+    .large-hex.hex-2 {
+        transform: translateY(0); /* Un-stagger */
+    }
+
+    .features-hero-title {
+        text-align: center;
+        padding: 0 1rem;
+    }
+}
+.carbon-visual-data {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .carbon-stat-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 5px solid #2e8b57; /* Green accent */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .carbon-stat-card i {
+            font-size: 2rem;
+            color: #2e8b57;
+            margin-bottom: 15px;
+        }
+        .carbon-stat-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .carbon-stat-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        .carbon-stat-card .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2e8b57;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .carbon-stat-card .partner-logos {
+            max-width: 220px; /* Adjust as needed */
+            height: auto;
+            margin-top: 10px;
+        }
+        .carbon-stat-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        .carbon-stat-card li {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .carbon-content-wrapper {
+                grid-template-columns: 1fr; /* Stack columns */
+            }
+            .carbon-visual-data {
+                margin-top: 30px;
+            }
+        }
+        .services-explained-section {
+            padding: 80px 20px;
+            background-color: #f9f9f9; /* Light grey background */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .services-explained-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .services-explained-section .section-subtitle {
+            font-size: 1.125rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .service-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .service-card .service-image {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: 0;
+        }
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        /* === NEW CSS FOR CARBON DEEP-DIVE SECTION === */
+        .carbon-deep-dive-section {
+            padding: 80px 20px;
+            background-color: #ffffff; /* Clean white background */
+            position: relative;
+            overflow: hidden;
+        }
+        .carbon-deep-dive-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .carbon-deep-dive-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .carbon-deep-dive-section .section-subtitle {
+            font-size: 1.125rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
+        }
+        .carbon-content-wrapper {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr; /* 60% text, 40% stats */
+            gap: 40px;
+            text-align: left;
+        }
+        .carbon-explanation h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2e8b57; /* Theme green */
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .carbon-explanation p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .carbon-explanation p strong {
+            color: #333;
+            font-weight: 600;
+        }
+       .soc-diagram-buttons {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            justify-content: center;
+            align-items: center;
+            gap: 15px; /* Space between buttons and arrows */
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 70px;
+            margin-right: 40px;
+            border: 1px solid #e9e9e9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .soc-button {
+            background-color: #ffffff; /* White button background */
+            border: 1px solid #dcdcdc; /* Light border */
+            border-radius: 8px;
+            padding: 15px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            white-space: nowrap; /* Keep button text on one line */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .soc-button:hover {
+            background-color: #e6f7ed; /* Light green hover background */
+            border-color: #2e8b57; /* Green border on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .soc-button i {
+            color: #2e8b57; /* Green icon color */
+            font-size: 1.2rem;
+        }
+
+        .soc-arrow {
+            color: #999; /* Grey arrow color */
+            font-size: 1.5rem;
+            flex-shrink: 0; /* Prevents arrows from shrinking */
+        }
+
+        /* Responsive adjustments for very small screens */
+        @media (max-width: 576px) {
+            .soc-diagram-buttons {
+                flex-direction: column; /* Stack buttons vertically */
+                gap: 10px;
+            }
+            .soc-arrow {
+                transform: rotate(90deg); /* Rotate arrows to point downwards */
+            }
+            .soc-button {
+                width: 100%; /* Full width buttons when stacked */
+                justify-content: center; /* Center text and icon */
+            }
+        }
+
+        .carbon-visual-data {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .carbon-stat-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 5px solid #2e8b57; /* Green accent */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .carbon-stat-card i {
+            font-size: 2rem;
+            color: #2e8b57;
+            margin-bottom: 15px;
+        }
+        .carbon-stat-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .carbon-stat-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        .carbon-stat-card .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2e8b57;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .carbon-stat-card .partner-logos {
+            max-width: 220px; /* Adjust as needed */
+            height: auto;
+            margin-top: 10px;
+        }
+        .carbon-stat-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        .carbon-stat-card li {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .carbon-content-wrapper {
+                grid-template-columns: 1fr; /* Stack columns */
+            }
+            .carbon-visual-data {
+                margin-top: 30px;
+            }
+        }
+
+.soc-know-more-btn {
+            /* This forces the button onto a new line */
+            flex-basis: 100%; 
+            text-align: center; /* Centers the button */
+            margin-top: 25px; /* Adds space above the button */
+        }
+
+        .soc-know-more-btn a {
+            display: inline-block; /* Allows padding, margins, etc. */
+            background-color: #2e8b57; /* Main theme green */
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .soc-know-more-btn a:hover {
+            background-color: #256d44; /* Darker green on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .soc-know-more-btn a i {
+            margin-left: 8px;
+            font-size: 0.9em;
+        }
+       /* --- CHATBOT FAB (Floating Action Button) --- */
+#chat-fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2e8b57;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 998;
+    transition: transform 0.3s ease;
+}
+#chat-fab:hover {
+    transform: scale(1.1);
+}
+
+/* --- CHAT MODAL --- */
+#chat-modal {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+
+    /* WIDTH FIXED HERE */
+    width: 450px;
+    max-width: 90%;
+
+    height: 520px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.3s ease-out;
+}
+#chat-modal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+
+/* Chat Header */
+.chat-header {
+    background: #2e8b57;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chat-header h3 {
+    font-size: 1.15rem;
+    margin: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+#chat-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+.chat-bubble {
+    padding: 10px 15px;
+    border-radius: 18px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+.chat-bubble.user {
+    background-color: #2e8b57;
+    color: white;
+    border-bottom-right-radius: 4px;
+    margin-left: auto;
+}
+.chat-bubble.bot {
+    background-color: #e0e0e0;
+    color: #333;
+    border-bottom-left-radius: 4px;
+    margin-right: auto;
+}
+.chat-bubble.bot.typing {
+    font-style: italic;
+    color: #777;
+}
+
+/* --- INPUT + BUTTONS FIXED --- */
+.chat-input {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    height: 80px;
+    /* padding: 1px; */
+    gap: 10px; /* Prevent overlap */
+}
+
+.chat-input input {
+    flex-grow: 2;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    /* Removed confusing margin-right to rely on the parent .chat-input gap */
+}
+
+
+.input-buttons {
+    display: flex;
+    gap: 6px;
+    margin-right: 15px;
+}
+
+.chat-input button {
+    background: #2e8b57;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 39px;
+    height: 39px;
+    cursor: pointer;
+    font-size: 18px;
+    flex-shrink: 0; /* PREVENT SQUISHING */
+    transition: background-color 0.2s ease;
+}
+.chat-input button:hover {
+    background-color: #256d44;
+}
+#chat-file-input {
+    display: none;
+}
+
+/* Mic Listening Pulse */
+#chat-mic-btn.listening {
+    background-color: #d93030;
+    animation: pulse 1s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(217, 48, 48, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(217, 48, 48, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(217, 48, 48, 0); }
+}
+
+/* --- BOT CARD --- */
+.chat-bubble.bot-card {
+    background-color: #e6f7ed;
+    border: 1px solid #a0d4b9;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 12px;
+}
+.chat-bubble.bot-card h4 {
+    color: #2e8b57;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+.chat-bubble.bot-card button {
+    background-color: #2e8b57;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.chat-bubble.bot-card button:hover {
+    background-color: #256d44;
+}
+
+
+/* ===================================
+   *** NEW ANIMATION STYLES (Paste at the END of your CSS) ***
+   =================================== */
+
+/* --- 1. Utility Classes for Scroll Reveal (Animate on Scroll) --- */
+
+/* Initial hidden state: slightly transparent and moved down */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.5, 0, 0, 1), transform 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+/* This is the final visible state when ScrollReveal (or JS) adds a class */
+/* Since you are using the ScrollReveal library in your JS, this class is usually provided by the library, 
+   but it's good practice to ensure elements are hidden initially. */
+/* The ScrollReveal library handles the transition to the final state (transform: none, opacity: 1) */
+
+
+/* --- 2. Load Animations (Webload) --- */
+
+/* NAVBAR: Slide down on load */
+.top-nav {
+    /* Existing styles... */
+    transform: translateY(-100%); /* Start off-screen above */
+    opacity: 0;
+    transition: transform 0.6s ease-out 0.1s, opacity 0.6s ease-out 0.1s;
+}
+
+/* Add this class to your <body> tag on load via JS (or a specific container) to trigger. */
+/* If you use the JS from the previous answer, you'd target this class. */
+body.loaded .top-nav {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* HERO CONTENT: Staggered Fade In */
+.hero .left > *, 
+.hero .right {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Ensure the staggered delays are applied when the page loads. */
+/* (This assumes you will add the 'loaded' class to the body or hero container via JS) */
+body.loaded .hero .left h1 { 
+    opacity: 1; transform: translateY(0); transition-delay: 0.2s; 
+}
+body.loaded .hero .lead { 
+    opacity: 1; transform: translateY(0); transition-delay: 0.3s; 
+}
+body.loaded .hero .hero-cta { 
+    opacity: 1; transform: translateY(0); transition-delay: 0.4s; 
+}
+body.loaded .hero .hero-stats { 
+    opacity: 1; transform: translateY(0); transition-delay: 0.5s; 
+}
+body.loaded .hero .right { 
+    opacity: 1; transform: translateY(0); transition-delay: 0.4s; 
+}
+
+
+/* --- 3. Animation Tweaks for Existing Elements --- */
+
+/* Enhance the FAQ Accordion transition */
+.acc-body {
+    /* Existing: display: none; */
+    overflow: hidden; /* Crucial for maxHeight animation */
+    max-height: 0; /* Initial hidden state for animation */
+    transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+}
+
+.acc-head {
+    transition: color 0.3s ease;
+}
+.acc-item.active .acc-head h4 {
+    color: #009b65; /* Highlight question when open */
+}
+
+/* Add a pulse to the main CTA button */
+@keyframes ctaPulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 185, 116, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 185, 116, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 185, 116, 0); }
+}
+
+.main-cta .btn {
+    /* Existing styles... */
+    animation: ctaPulse 2s infinite ease-out 1s; /* Subtle, continuous animation after a delay */
+}
+
+.main-cta .btn:hover {
+    animation: none; /* Stop pulse when hovering for clean feedback */
+}
+
+
+/* --- 4. Floating Background Circles Update (More subtle) --- */
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -20px); } /* Added X movement */
+    100% { transform: translate(0, 0); }
+}
+.services-explained-section {
+            padding: 80px 20px;
+            background-color: #f9f9f9; 
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-explained-section h2 {
+            font-size: 2.5rem; 
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .services-explained-section .section-subtitle {
+            font-size: 1.125rem; 
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card .service-image {
+            width: 70px; 
+            height: 70px; 
+            object-fit: contain; 
+            margin-bottom: 20px;
+            display: block; 
+            margin-left: 0; 
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem; 
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 1rem; 
+            color: #555;
+            line-height: 1.6;
+            flex-grow: 1; 
+        }
+        /* --- CRITICAL CSS FOR FULL-SCREEN MODAL CENTERING --- */
+
+/* 1. The Overlay/Container (Must cover the screen and be hidden by default) */
+#soil-input-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    z-index: 2000; /* Ensure it is on top of everything */
+    
+    /* CRITICAL CENTERING PROPERTIES */
+    display: none; /* MUST be hidden by default */
+    align-items: center; /* Vertically center the content box */
+    justify-content: center; /* Horizontally center the content box */
+}
+
+/* 2. The Visibility Toggle (Activated by JavaScript) */
+#soil-input-modal.visible {
+    display: flex; 
+}
+
+/* 3. The Content Box (The white/light green part with the inputs) */
+.soil-modal-content {
+    background: #f9fff9; /* Your theme light background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    max-width: 480px;
+    width: 90%;
+    
+    /* Structure the internal elements */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between labels/inputs */
+}
+
+/* 4. Styling the Inputs and Labels */
+.soil-modal-content label {
+    font-weight: 600;
+    color: #4E6B5F;
+    margin-top: 5px;
+}
+
+.soil-modal-content input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't widen the box */
+}
+
+/* 5. Action Buttons */
+.soil-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+#soil-submit {
+    background: #0f7d2e; /* Primary green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+#soil-cancel {
+    background: #ccc;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}

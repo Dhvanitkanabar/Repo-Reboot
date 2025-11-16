@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Investors & Carbon Buyers — Rupiya</title> <!-- Corrected Title -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="farmers.css">
+
+  <!-- =============================== -->
+  <!-- =  NEW/UPDATED STYLES FOR INVESTORS PAGE =  -->
+  <!-- =============================== -->
+  <style>
+    /* FIX: Hero Image Box */
+    .hero .visual-box {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+    
+    /* Section Structure: Alternating backgrounds */
+    /* .counters, .faq, .ready-to-transform-section {
+        background-color: #fff;
+    } */
+    .collaborations-section, .slider, .how-it-works-section, .download-section, .site-footer {
+        background-color: #f9f9f9;
+    }
+
+    /* Professional "Collaborations" Section */
+    .collaborations-section {
+        padding: 80px 20px;
+        text-align: center;
+    }
+    .collaborations-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .collaborations-section .section-description {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto 50px auto;
+        line-height: 1.6;
+    }
+    .partner-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .partner-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+    }
+    .partner-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .partner-card i { /* Icon for partner type */
+        font-size: 2.5rem;
+        color: #2e8b57;
+        margin-bottom: 20px;
+        width: 50px;
+    }
+    .partner-card h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 10px;
+    }
+    .partner-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+    @media (max-width: 992px) {
+        .partner-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 768px) {
+        .partner-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Professional "Supply Chain" Section */
+    .how-it-works-section {
+        padding: 80px 20px;
+    }
+    main.container section.how-it-works-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center !important; 
+    }
+    main.container section.how-it-works-section .section-description {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 800px;
+        line-height: 1.6;
+        text-align: center !important; 
+        margin: 0 auto 50px auto !important; 
+    }
+    .how-it-works-section .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px; 
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .how-it-works-section .step-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px; 
+        text-align: center;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .how-it-works-section .step-card:hover {
+        transform: translateY(-8px); 
+        box-shadow: 0 12px 30px rgba(0,0,0,0.12); 
+    }
+    .how-it-works-section .step-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #2e8b57;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px; 
+    }
+    .how-it-works-section .step-card h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px !important; 
+    }
+    .how-it-works-section .step-card p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+    }
+    @media (max-width: 992px) {
+        .how-it-works-section .steps-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 768px) {
+        .how-it-works-section .steps-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Professional "Farmer Feedback" Slider */
+    section.slider {
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section.slider h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .slider-track {
+        display: flex;
+        gap: 20px;
+    }
+    .slide {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 35px 30px 30px 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        border: 1px solid #e9e9e9;
+        flex: 0 0 320px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        text-align: left;
+    }
+    .slide:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .slide p {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .slide p::before {
+        content: '“';
+        font-family: Georgia, serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #2e8b57;
+        position: absolute;
+        top: -25px;
+        left: -10px;
+        line-height: 1;
+    }
+    .slide h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #333;
+        text-align: right;
+        margin-top: 15px;
+        position: relative;
+    }
+    .slide h4::before {
+        content: '— ';
+        color: #2e8b57;
+        font-weight: 700;
+    }
+    .slider-controls {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .control-btn {
+        position: relative;
+        top: 0; left: 0; right: 0;
+        transform: none;
+        background-color: #2e8b57;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+    .control-btn:hover {
+        background-color: #256d44;
+        transform: scale(1.1);
+    }
+
+    /* FIX: FAQ Section */
+    section.faq {
+        padding: 80px 20px;
+    }
+    main.container section.faq h2 { /* Changed from h3 */
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333 !important;
+        text-align: center !important;
+        margin-bottom: 50px;
+    }
+    .accordion .acc-head h4 {
+        color: #333 !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+    }
+    .accordion {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating circles -->
+  <div class="bg-circle c1" aria-hidden="true"></div>
+  <div class="bg-circle c2" aria-hidden="true"></div>
+  <div class="bg-circle c3" aria-hidden="true"></div>
+
+  <!-- Top Nav -->
+ <div class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="fpos.html">FPOs</a>
+    <a href="buyers.html">Buyers</a>
+    <a class="active" href="investors.html">Investors</a>
+    <a href="farmers.html">Farmer</a>
+  </div>
+
+
+<main class="container">
+
+    <section class="hero">
+      <div class="left">
+        <h1>Investing in a Scalable, Profitable, & Planet-Positive Future</h1>
+        <p class="lead">We are building India's largest tech-enabled network for residue-free farming, generating verifiable carbon credits and a traceable supply chain. This is your opportunity to invest in measurable impact and strong financial returns.</p>
+
+        <div class="hero-cta">
+          <a class="btn" href="contact.html">Contact Investor Relations</a>
+          <a class="btn secondary" href="#impact">View Impact Numbers</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat"><div class="num">500k+</div><div class="label">Acres in Network</div></div>
+          <div class="stat"><div class="num">250k+</div><div class="label">Tonnes CO2e Sequestered</div></div>
+          <div class="stat"><div class="num">35%</div><div class="label">Avg. Farmer Income Rise</div></div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="visual-box">
+          <img src="assets/reveue.png" alt="Growth graph of farmer network and carbon revenue" style="width:100%">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- =   UPDATED "Collaborations" SECTION        = -->
+    <!-- ============================================= -->
+    <section id="collaborations" class="collaborations-section">
+        <h2>Our Strategic Partners & Collaborations</h2>
+        <p class="section-description">We are trusted by leading government, private, and global institutions.</p>
+        
+        <div class="partner-grid">
+            <div class="partner-card">
+                <i class="fas fa-landmark"></i>
+                <h3>Government of Punjab</h3>
+                <p>MoU signed to promote residue-free farming and reduce crop burning across 2 million acres.</p>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-industry"></i>
+                <h3>ITC Limited</h3>
+                <p>Official supply chain partner for sourcing traceable, high-quality wheat and spices.</p>
+            </div>
+            <div class="partner-card">
+                <i class="fas fa-globe-americas"></i>
+                <h3>World Bank Group</h3>
+                <p>Partners in a climate-smart agriculture project, co-financing farmer training and tech adoption.</p>
+            </div>
+             <div class="partner-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Verra / Gold Standard</h3>
+                <p>Our projects are registered and audited under leading global standards for carbon credit verification.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="counters">
+      <div class="counter"><div class="big" data-target="50000">0</div><div class="small">Farmers in Network</div></div>
+      <div class="counter"><div class="big" data-target="250000">0</div><div class="small">Tonnes CO2e Sequestered</div></div>
+      <div class="counter"><div class="big" data-target="5000000">0</div><div class="small">Litres Water Saved (Est.)</div></div>
+      <div class="counter"><div class="big" data-target="40">0</div><div class="small">Supply Chain Efficiency (%)</div></div>
+    </section>
+
+    <section id="process" class="how-it-works-section">
+      <div class="container">
+        <h2>A Transparent & Tech-Enabled Supply Chain</h2>
+        <p class="section-description">Our vertically integrated model ensures quality, traceability, and efficiency from seed to sale.</p>
+        
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Digital Onboarding</h3>
+            <p>Every farmer and FPO is geotagged, creating a verifiable digital identity.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Input Traceability</h3>
+            <p>All agri-inputs are tracked via our platform to ensure protocol compliance.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Real-Time MRV</h3>
+            <p>Our app captures data for Monitoring, Reporting & Verification of carbon.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Aggregated Sourcing</h3>
+            <p>FPO-level aggregation centers perform first-mile quality checks.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <h3>Traceable Delivery</h3>
+            <p>Final product is shipped to buyers with a unique QR code for full traceability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slider">
+      <h2>Impact on the Ground: Farmer Feedback</h2>
+      <div class="slider-track">
+        <div class="slide"><p>"My income grew by 40% after joining Rupiya. The buy-back guarantee is a blessing."</p><h4>— Ramesh Patel</h4></div>
+        <div class="slide"><p>"For the first time, I have earned extra income from carbon credits. This is a revolutionary idea."</p><h4>— Sunita Devi</h4></div>
+        <div class="slide"><p>"The soil on my farm is much healthier, and I am using 70% fewer chemicals. The training was very helpful."</p><h4>— Harish Kumar</h4></div>
+        <div class="slide"><p>"Selling is easy. I just follow the app, and the FPO handles the rest. My selling price is much better now."</p><h4>— Karan Singh</h4></div>
+      </div>
+
+      <div class="slider-controls">
+        <button class="control-btn">‹</button>
+        <button class="control-btn">›</button>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2> <!-- Changed from h3 -->
+      <div class="accordion">
+
+        <div class="acc-item">
+          <div class="acc-head"><h4>What is your carbon verification (MRV) process?</h4><div class="acc-icon">+</div></div>
+          <div class="acc-body">We use a hybrid MRV (Monitoring, Reporting, Verification) model, combining satellite data with our proprietary app for on-ground data capture. All projects are audited by third-party validators under Verra or Gold Standard.</div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-head"><h4>What are the investment models available?</h4><div class="acc-icon">+</div></div>
+          <div class="acc-body">We offer opportunities in equity investment (for scaling our platform), debt financing (for supply chain operations), and direct pre-purchase of carbon credits. Please contact our team for the full investor deck.</div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-head"><h4>How do you ensure farmer retention and impact?</h4><div class="acc-icon">+</div></div>
+          <div class="acc-body">Our model is built on a "Farmer First" principle. By increasing their net income through premium pricing, carbon revenue, and lower input costs—backed by a buy-back guarantee—we ensure high retention and long-term, sustainable impact.</div>
+        </div>
+      </div>
+    </section>
+
+   <section class="download-section">
+     <div class="container download-inner">
+         <div class="phone-mock">
+             <!-- Corrected image path typo -->
+             <img src="assets/m=impact report.jpeg" alt="Impact Report">
+         </div>
+
+         <div class="app-ctas">
+             <h2>Get Our Full Impact & Investor Deck</h2>
+             <p>See the complete data, growth projections, and financial models.</p>
+
+             <div class="store-row">
+                 <a class="store-btn google-play" href="impact-report.pdf">Download Impact Report</a>
+                 <a class="store-btn app-store" href="contact.html">Request Investor Deck</a>
+             </div>
+         </div>
+     </div>
+</section>
+
+<section class="ready-to-transform-section">
+  <div class="container">
+    <h2>Invest in the Future of Agriculture.</h2>
+    <p>Be a part of a scalable, profitable, and planet-positive revolution.</p>
+    <a class="btn" href="contact.html">Contact Our Investor Relations Team</a>
+  </div>
+</section>
+
+<div class="back-home-row container">
+  <a class="back-home" href="index.html">← Home</a>
+</div>
+</main>
+
+<footer class="site-footer">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+        <div class="section-shape shape3"></div>
+
+        <div class="container footer-wrapper">
+            <div class="footer-brand">
+                <h2>Rupiya</h2>
+                <p>Residue-Free Farming for a Better Tomorrow</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="farmers.html">Farmers</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Subscribe</h4>
+                <p>Get the latest updates on residue-free farming</p>
+                <form>
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rupiya. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Animation Scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Use the new universal JS file -->
+    <script src="investors.js"></script>
+
+</body>
+</html>

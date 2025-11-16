@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Farmers — Rupiya</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="farmers.css">
+
+  <style>
+    /* General Section Styling */
+    .support-system-section,
+    .carbon-farmer-section,
+    .crop-section {
+        padding: 80px 20px;
+        text-align: center;
+    }
+    .carbon-farmer-section {
+        background-color: #f9f9f9;
+    }
+    .support-system-section h2,
+    .carbon-farmer-section h2,
+    .crop-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .support-system-section .section-description,
+    .carbon-farmer-section .section-description,
+    .crop-section .section-description {
+        font-size: 1.125rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto 50px auto;
+        line-height: 1.6;
+    }
+
+    /* --- UPDATED: 1. Support System Section (How to shift + Inputs/Advisory) --- */
+    .support-grid {
+        display: grid;
+        /* Force 2 columns on larger screens, then stack on smaller */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px; /* Gap between cards */
+        max-width: 1000px; /* Slightly wider max-width for 2 columns */
+        margin: 0 auto;
+        text-align: left;
+    }
+    @media (max-width: 768px) {
+        .support-grid {
+            grid-template-columns: 1fr; /* Stack cards on smaller screens */
+        }
+    }
+
+    .support-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #eee;
+    }
+    .support-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .support-card i {
+        font-size: 2.5rem;
+        color: #2e8b57; /* Theme Green */
+        margin-bottom: 20px;
+    }
+    .support-card h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 10px;
+    }
+    .support-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    /* --- UPDATED: 2. Carbon Credits Section --- */
+    .carbon-steps {
+        display: flex;
+        justify-content: space-around; /* Distribute items evenly */
+        align-items: flex-start;
+        gap: 30px; /* Gap between columns */
+        max-width: 1200px;
+        margin: 0 auto 40px auto; /* Added bottom margin for the button */
+    }
+    .carbon-step-card {
+        flex: 1; /* Allow cards to grow and shrink */
+        max-width: 30%; /* Limit width to ensure spacing on larger screens */
+        text-align: center;
+        padding: 20px;
+    }
+    .carbon-step-card .num {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #2e8b57;
+        color: #fff;
+        font-size: 1.75rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(46, 139, 87, 0.4);
+    }
+    .carbon-step-card h4 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    .carbon-step-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+    .carbon-arrow {
+        font-size: 2.5rem;
+        color: #aaa;
+        margin-top: 50px; /* Align arrows vertically */
+        flex-shrink: 0; /* Prevent arrow from shrinking */
+    }
+    /* Responsive for carbon steps */
+    @media (max-width: 768px) {
+        .carbon-steps {
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .carbon-step-card {
+            max-width: 90%; /* Allow cards to take more width on small screens */
+        }
+        .carbon-arrow {
+            margin: 0;
+            transform: rotate(90deg);
+        }
+    }
+
+    /* NEW: Learn More Button for Carbon Section */
+    .carbon-farmer-section .learn-more-btn {
+        display: inline-block; /* Allows padding and alignment */
+        background-color: #2e8b57; /* Primary green */
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 10px rgba(46, 139, 87, 0.3);
+    }
+    .carbon-farmer-section .learn-more-btn:hover {
+        background-color: #256d44; /* Darker green on hover */
+        transform: translateY(-2px);
+    }
+
+
+    /* 3. Crops We Support Section */
+    .crop-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .crop-item {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 30px; /* Pill shape */
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #444;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+    .crop-item:hover {
+        background-color: #2e8b57;
+        color: #fff;
+        border-color: #2e8b57;
+        transform: translateY(-2px);
+    }
+
+    /* Utility (re-using from your 'btn' class logic) */
+    .btn.secondary {
+        background: transparent;
+        color: #2e8b57;
+        border: 2px solid #2e8b57;
+    }
+    .btn.secondary:hover {
+        background: #e6f7ed;
+    }
+  </style>
+  </head>
+<body>
+
+  <div class="bg-circle c1" aria-hidden="true"></div>
+  <div class="bg-circle c2" aria-hidden="true"></div>
+  <div class="bg-circle c3" aria-hidden="true"></div>
+
+  <div class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="fpos.html">FPO</a>
+    <a href="buyers.html">Buyers</a>
+    <a href="investors.html">Investors</a>
+    <a class="active" href="farmers.html">Farmer</a>
+  </div>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="left">
+        <h1>Empowering Farmers for a Residue-Free Future</h1>
+        <p class="lead">Practical advice, verified markets, and premium buyers — built so farmers get better yield, cleaner crops, and higher income.</p>
+
+        <div class="hero-cta">
+          <a class="btn" href="contact.html">Join as a Farmer</a>
+          <a class="btn secondary" href="#how">How it works</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat"><div class="num">50k+</div><div class="label">Farmers</div></div>
+          <div class="stat"><div class="num">5 L+</div><div class="label">Acres guided</div></div>
+          <div class="stat"><div class="num">35%</div><div class="label">Avg income rise</div></div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="visual-box">
+          <img src="assets/farmer illustrations.jpeg" alt="Farmer illustration" style="width:70%">
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <h2>Farmer Gallery</h2>
+      <p>Real farmers. Real success. Real change.</p>
+      <div class="gallery-grid">
+        <img src="assets/farmer1.avif" alt="">
+        <img src="assets/farmer2.webp" alt="">
+        <img src="assets/farmer3.jpeg" alt="">
+        <img src="assets/farmer4.webp" alt="">
+        <img src="assets/farmer5.jpeg" alt="">
+        <img src="assets/farmer6.jpeg" alt="">
+      </div>
+    </section>
+
+    <section class="counters">
+      <div class="counter"><div class="big" data-target="50000">0</div><div class="small">Farmers Trained</div></div>
+      <div class="counter"><div class="big" data-target="500000">0</div><div class="small">Acres Improved</div></div>
+      <div class="counter"><div class="big" data-target="35">0</div><div class="small">Avg Income Increase (%)</div></div>
+      <div class="counter"><div class="big" data-target="78">0</div><div class="small">Pesticide Reduction (%)</div></div>
+    </section>
+
+    <section id="how" class="how-it-works-section">
+      <div class="container">
+          <h2>How it Works</h2>
+          <p class="section-description">Our simple process to empower your farming journey.</p>
+          <div class="steps-grid">
+              <div class="step-card">
+                  <div class="step-icon">1</div>
+                  <h3>Register</h3>
+                  <p>Sign up easily on our platform.</p>
+              </div>
+              <div class="step-card">
+                  <div class="step-icon">2</div>
+                  <h3>Get Verified</h3>
+                  <p>Our team verifies your farm details.</p>
+              </div>
+              <div class="step-card">
+                  <div class="step-icon">3</div>
+                  <h3>Follow Guidance</h3>
+                  <p>Implement our residue-free farming steps.</p>
+              </div>
+              <div class="step-card">
+                  <div class="step-icon">4</div>
+                  <h3>Harvest</h3>
+                  <p>Achieve higher quality, cleaner crops.</p>
+              </div>
+              <div class="step-card">
+                  <div class="step-icon">5</div>
+                  <h3>Sell with Premium</h3>
+                  <p>Connect with buyers for better prices.</p>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="support-system-section">
+        <div class="container">
+            <h2>How We Increase Your Yield & Reduce Costs</h2>
+            <p class="section-description">Our proven 4-point system helps you shift to residue-free farming successfully.</p>
+            <div class="support-grid">
+                <div class="support-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Expert Advisory (App + On-Ground)</h3>
+                    <p>Get daily advice from our agronomists on the app, plus regular on-farm visits to solve problems fast. This guidance helps you use inputs correctly and save money.</p>
+                </div>
+                <div class="support-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Residue-Free Inputs</h3>
+                    <p>You get a complete kit of 35+ certified bio-inputs. These are safer for your soil, improve quality, and reduce your dependence on costly chemical pesticides.</p>
+                </div>
+                <div class="support-card">
+                    <i class="fas fa-satellite"></i>
+                    <h3>AI-Powered Soil & Crop Health</h3>
+                    <p>We use satellite data to test your soil (no-cost) and AI to monitor your crop's health 24/7. This helps you apply the *right* input at the *right* time, increasing yield.</p>
+                </div>
+                <div class="support-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Full Risk Protection</h3>
+                    <p>We protect you with parametric insurance (for weather) and a guaranteed buy-back program for your qualified produce, ensuring your hard work pays off.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="carbon-farmer-section">
+        <div class="container">
+            <h2>How Carbon Credit Income Works</h2>
+            <p class="section-description">Earn extra income (₹800 per credit) for farming the right way. It's simple.</p>
+            <div class="carbon-steps">
+                <div class="carbon-step-card">
+                    <div class="num">1</div>
+                    <h4>Farm Better</h4>
+                    <p>By using our residue-free inputs and regenerative methods, your soil starts to trap carbon from the air.</p>
+                </div>
+                <div class="carbon-arrow">→</div>
+                <div class="carbon-step-card">
+                    <div class="num">2</div>
+                    <h4>We Verify</h4>
+                    <p>Our AI platform and European partners (Carboneg) measure and verify the carbon stored in your soil.</p>
+                </div>
+                <div class="carbon-arrow">→</div>
+                <div class="carbon-step-card">
+                    <div class="num">3</div>
+                    <h4>You Get Paid</h4>
+                    <p>We sell this "carbon credit" to companies and pay you ₹800 for every verified credit, as direct extra income.</p>
+                </div>
+            </div>
+            <a class="learn-more-btn" href="index.html#carbon-deep-dive-section">Learn More About Carbon</a>
+        </div>
+    </section>
+
+    <section class="crop-section">
+        <div class="container">
+            <h2>Which Crops We Support</h2>
+            <p class="section-description">We are rapidly expanding our portfolio. We currently support (or are piloting) the following crops:</p>
+            <div class="crop-grid">
+                <div class="crop-item" data-crop="Pomegranate">Pomegranate</div>
+                <div class="crop-item" data-crop="Grapes">Grapes</div>
+                <div class="crop-item" data-crop="Tomato">Tomato</div>
+                <div class="crop-item" data-crop="Chilli">Chilli</div>
+                <div class="crop-item" data-crop="Potato">Potato</div>
+                <div class="crop-item" data-crop="Cotton">Cotton</div>
+                <div class="crop-item" data-crop="Onion">Onion</div>
+                <div class="crop-item" data-crop="Sugarcane">Sugarcane</div>
+                <div class="crop-item" data-crop="Soybean">Soybean</div>
+                <div class="crop-item" data-crop="Turmeric">Turmeric</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider">
+      <h2>Farmer Success Stories</h2>
+      <div class="slider-track">
+        <div class="slide"><p>"Rupiya helped me reduce chemical usage by 70%."</p><h4>— Ramesh Patel</h4></div>
+        <div class="slide"><p>"Training changed everything."</p><h4>— Sunita Devi</h4></div>
+        <div class="slide"><p>"Guidance improved selling price."</p><h4>— Harish Kumar</h4></div>
+        <div class="slide"><p>"Modern practices upgraded my farm."</p><h4>— Karan Singh</h4></div>
+        <div class="slide"><p>"I solved fertilizer issues instantly."</p><h4>— Meera Joshi</h4></div>
+        <div class="slide"><p>"Now I get fair pricing."</p><h4>— Ajay Pradhan</h4></div>
+        <div class="slide"><p>"Premium buyer in 30 days."</p><h4>— Chandan Rout</h4></div>
+        <div class="slide"><p>"Weather alerts saved my crop."</p><h4>— Lakshmi Naidu</h4></div>
+      </div>
+
+      <div class="slider-controls">
+        <button class="control-btn" onclick="moveSlide(-1)">‹</button>
+        <button class="control-btn" onclick="moveSlide(1)">›</button>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Farmers Say</h2>
+      <div class="test-grid">
+        <div class="test-card"><p>“I use fewer chemicals now.”</p><h5>— Meena Kumari</h5></div>
+        <div class="test-card"><p>“Buyers pay premium now.”</p><h5>— Vinod Kumar</h5></div>
+        <div class="test-card"><p>“I track everything digitally.”</p><h5>— Lata Bai</h5></div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h3>Frequently Asked Questions</h3>
+      <div class="accordion">
+        <div class="acc-item">
+          <div class="acc-head"><h4>Is residue-free farming expensive?</h4><div class="acc-icon">+</div></div>
+          <div class="acc-body">No — it's designed to use local inputs.</div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-head"><h4>How do I enroll?</h4><div class="acc-icon">+</div></div>
+          <div class="acc-body">Click "Join as a Farmer".</div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-head"><h4>Will Rupiya help with market access?</h4><div class="acc-icon">+</div></div>
+          <div class="acc-body">Yes — we connect you to premium buyers.</div>
+        </div>
+      </div>
+    </section>
+
+   <section class="download-section">
+    <div class="container download-inner">
+        <div class="phone-mock">
+            <img src="assets/playstore.png" alt="Phone preview">
+        </div>
+
+        <div class="app-ctas">
+            <h2>Get the Rupiya App</h2>
+            <p>Advisory & tracking — always with you.</p>
+
+            <div class="store-row">
+                <a class="store-btn google-play" href="#">Google Play</a>
+                <a class="store-btn app-store" href="#">App Store</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ready-to-transform-section">
+    <div class="container">
+        <h2>Ready to transform your farm?</h2>
+        <p>Join our network of residue-free growers and reap the benefits.</p>
+        <a class="btn" href="contact.html">Become a Rupiya Farmer</a>
+    </div>
+</section>
+
+<div class="back-home-row container">
+  <a class="back-home" href="index.html">← Home</a>
+</div>
+
+<div id="crop-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button id="modal-close-btn" class="modal-close">&times;</button>
+        <img id="modal-crop-image" src="" alt="Crop Image">
+        <h2 id="modal-crop-title">Crop Title</h2>
+        <p id="modal-crop-testimonial">"This is a farmer testimonial."</p>
+        <h4>Key Benefits:</h4>
+        <ul id="modal-crop-benefits">
+            </ul>
+        <a id="modal-crop-cta" href="contact.html" class="btn">Learn More</a>
+    </div>
+</div>
+
+</main>
+<footer class="site-footer">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+        <div class="section-shape shape3"></div>
+
+        <div class="container footer-wrapper">
+            <div class="footer-brand">
+                <h2>Rupiya</h2>
+                <p>Residue-Free Farming for a Better Tomorrow</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#farmers">Farmers</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Subscribe</h4>
+                <p>Get the latest updates on residue-free farming</p>
+                <form>
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rupiya. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script src="farmers.js"></script>
+</body>
+</html>

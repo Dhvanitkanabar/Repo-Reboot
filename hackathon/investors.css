@@ -1,0 +1,853 @@
+/* -----------------------------------
+    TOP NAVBAR
+----------------------------------- */
+.top-nav {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+}
+.top-nav a {
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+}
+.top-nav a.active {
+    color: #2ecc71; /* This is from your original file */
+}
+
+.footer {
+    margin-top: 50px;
+    background: #fff;
+    border-top: 1px solid #eaeaea;
+    padding: 25px 0;
+    text-align: center;
+}
+/* This is the main footer style you are using */
+.site-footer {
+    background: linear-gradient(135deg, #1a5d3f, #14914a);
+    color: #fff;
+    padding: 80px 40px 30px; 
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Shapes for Footer */
+.site-footer .section-shape {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 15s ease-in-out infinite;
+}
+.site-footer .section-shape.shape1 {
+    width: 80px; height: 80px;
+    background: rgba(212, 244, 221, 0.2); 
+    top: 10px; left: 20px;
+    animation-delay: 0s;
+}
+.site-footer .section-shape.shape2 {
+    width: 50px; height: 50px;
+    background: rgba(175, 235, 194, 0.2);
+    bottom: 30px; right: 50px;
+    animation-delay: 3s;
+}
+.site-footer .section-shape.shape3 {
+    width: 60px; height: 60px;
+    background: rgba(224, 247, 224, 0.2);
+    top: 50px; right: 100px;
+    animation-delay: 5s;
+}
+
+
+.footer-wrapper,
+.footer-bottom {
+    position: relative;
+    z-index: 2; 
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.footer-brand h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #d4f4dd;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    color: #e0f7e0;
+    line-height: 1.5;
+}
+
+/* Quick Links */
+.footer-links h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #e0f7e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+}
+
+/* Newsletter */
+.footer-newsletter h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.footer-newsletter p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: #e0f7e0;
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-newsletter input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    flex: 1;
+    min-width: 150px;
+    font-family: "Inter", sans-serif;
+}
+
+.footer-newsletter button {
+    background: #d4f4dd;
+    color: #1a5d3f;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 600;
+}
+
+.footer-newsletter button:hover {
+    background: #ffffff;
+}
+
+/* Socials */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-socials a {
+    color: #e0f7e0;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #ffffff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0 0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.9rem;
+    color: #d4f4dd;
+}
+.footer-bottom p {
+    color: #d4f4dd;
+}
+
+/* -----------------------------------
+    RESPONSIVE
+----------------------------------- */
+@media (max-width: 900px) {
+    /* Footer */
+    .footer-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-newsletter form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------
+    GLOBAL RESET + BASE
+----------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f4fdf9;
+    overflow-x: hidden;
+    color: #222;
+    line-height: 1.6;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #0b3d16; /* Dark green for headings */
+}
+
+p {
+    color: #4E6B5F; /* Soft green-gray for text */
+}
+
+a {
+    text-decoration: none;
+    color: #0f7d2e;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* -----------------------------------
+    FLOATING BACKGROUND CIRCLES
+----------------------------------- */
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(3px);
+    z-index: -1;
+    animation: float 8s ease-in-out infinite;
+}
+
+.c1 { width: 220px; height: 220px; background:#9affd5; top:60px; left:-90px; }
+.c2 { width: 180px; height: 180px; background:#afffe2; bottom:80px; right:-70px; }
+.c3 { width: 140px; height: 140px; background:#c5ffef; bottom:300px; left:-50px; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-22px); }
+    100% { transform: translateY(0); }
+}
+
+
+  
+/* -----------------------------------
+    CONTAINER
+----------------------------------- */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+/* -----------------------------------
+    REUSABLE BUTTONS
+----------------------------------- */
+.btn {
+    background: #00b974;
+    color: white;
+    padding: 0.9rem 1.6rem;
+    border-radius: 10px;
+    margin-right: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+}
+.btn.secondary {
+    background: white;
+    border: 2px solid #00b974;
+    color: #00b974;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* -----------------------------------
+    HERO SECTION
+----------------------------------- */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero .left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero .right {
+    flex: 0 1 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #009b65;
+}
+
+.lead {
+    font-size: 1.1rem;
+    margin: 1rem 0 1.5rem;
+    max-width: 550px;
+}
+
+/* Hero stats */
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat .num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #008a62;
+}
+.stat .label {
+    font-size: 0.9rem;
+    color: #4E6B5F;
+}
+
+/* Right side visual box */
+.visual-box {
+    background: white;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+/* -----------------------------------
+    GALLERY
+----------------------------------- */
+.gallery {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.gallery-grid {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* -----------------------------------
+    COUNTERS
+----------------------------------- */
+.counters {
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.counter {
+    text-align: center;
+    margin: 1rem;
+    flex: 1;
+    min-width: 150px;
+}
+
+.big {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #00885d;
+}
+.small {
+    color: #4E6B5F;
+}
+
+/* -----------------------------------
+    SLIDER (SUCCESS STORIES)
+----------------------------------- */
+.slider {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.slider-track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+}
+
+.slide {
+    min-width: 250px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.06);
+}
+
+.control-btn {
+    margin: 1rem;
+    padding: 0.6rem 1rem;
+    background: #00b974;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* -----------------------------------
+    TESTIMONIALS
+----------------------------------- */
+.testimonials {
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+.test-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 1rem;
+}
+
+.test-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.06);
+    /* Added for FPO/Buyer/Investor pages */
+    text-align: left;
+    height: 100%; /* Ensures cards in a row are same height */
+}
+
+/* -----------------------------------
+    FAQ ACCORDION
+----------------------------------- */
+.faq {
+    max-width: 800px;
+    margin: 4rem auto 0;
+}
+
+.faq h3 {
+    text-align: center;
+}
+
+.accordion {
+    margin-top: 2rem;
+}
+
+.acc-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.04);
+}
+
+.acc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.acc-head h4 {
+    margin-bottom: 0;
+}
+.acc-icon {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #00b974;
+    transition: transform 0.3s ease;
+}
+.acc-item.active .acc-icon {
+    transform: rotate(45deg);
+}
+
+.acc-body {
+    margin-top: 0.5rem;
+    display: none;
+}
+
+/* -----------------------------------
+   1. DOWNLOAD APP (CENTERED)
+----------------------------------- */
+.download-section {
+    margin-top: 5rem;
+    padding: 3rem 0;
+    /* Added to center the content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.download-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* This was updated */
+    gap: 40px;
+    text-align: center; /* This was added */
+    flex-wrap: wrap; /* Added for responsiveness */
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    max-width: 900px;
+    width: 100%;
+}
+
+.download-inner .phone-mock {
+    flex: 1;
+    text-align: center;
+    min-width: 180px; /* Ensure image doesn't get too small */
+}
+.download-inner .phone-mock img {
+    max-width: 260px;
+    height: auto;
+}
+
+.download-inner .app-ctas {
+    flex: 2;
+    min-width: 280px;
+    text-align: center; /* Center the text and buttons */
+}
+.download-inner .app-ctas h2 {
+    font-size: 2rem;
+    color: #009b65;
+    margin-bottom: 0.5rem;
+}
+.download-inner .app-ctas p {
+    font-size: 1.1rem;
+    color: #4E6B5F;
+    margin-bottom: 1.5rem;
+}
+
+.store-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: center; /* This was added */
+    flex-wrap: wrap;
+}
+
+.store-btn {
+    background: #222;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.store-btn:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+.store-btn.google-play {
+    background: #0f7d2e; /* Your primary green */
+}
+.store-btn.google-play:hover {
+    background: #0d6c27;
+}
+
+.store-btn.app-store {
+    background: #333; /* Slightly darker */
+}
+.store-btn.app-store:hover {
+    background: #000;
+}
+
+
+/* -----------------------------------
+   2. HOW IT WORKS (BOXES)
+----------------------------------- */
+.how-it-works-section {
+    text-align: center;
+    margin: 5rem 0;
+    padding: 3rem 0;
+    background: #e8f9e9; /* Light green background */
+}
+
+.how-it-works-section h2 {
+    color: #009b65;
+    margin-bottom: 1rem;
+}
+
+.how-it-works-section .section-description {
+    font-size: 1.15rem;
+    color: #4E6B5F;
+    max-width: 700px;
+    margin: 0 auto 3rem; /* Center and add space below description */
+}
+
+.steps-grid {
+    display: grid;
+    /* Creates a responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.step-card {
+    background: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border: 1px solid #dfffe0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.step-number, .step-icon { /* Renamed for clarity, works with both */
+    width: 50px;
+    height: 50px;
+    background: #d4f4dd; /* Light green from footer button */
+    color: #1a5d3f;     /* Dark green from footer button */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem; /* Center the circle */
+}
+
+.step-card h3 {
+    font-size: 1.25rem;
+    color: #008a62; /* Color from .stat .num */
+    margin-bottom: 0.5rem;
+}
+
+.step-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #4E6B5F; /* Standard text color */
+}
+
+
+/* -----------------------------------
+   3. MAIN CTA (PROFESSIONAL LOOK)
+----------------------------------- */
+.ready-to-transform-section {
+    text-align: center;
+    margin: 80px 0;
+    /* Add background gradient from footer */
+    background: linear-gradient(135deg, #1a5d3f, #14914a);
+    color: #fff;
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.ready-to-transform-section h2 {
+    font-size: 2.5rem;
+    color: #d4f4dd; /* Light green text */
+    margin-bottom: 1rem;
+}
+
+.ready-to-transform-section p {
+    margin: 0 auto 2rem; /* Center paragraph */
+    font-size: 1.2rem;
+    color: #e0f7e0;
+    max-width: 600px; /* Keep line length readable */
+}
+
+.ready-to-transform-section .btn {
+    margin-top: 1rem;
+    background: #fff; /* White button */
+    color: #1a5d3f; /* Dark green text */
+    font-weight: 700;
+    padding: 1rem 2rem; /* Make it larger */
+    font-size: 1.1rem;
+    border: none; 
+    border-radius: 10px; /* Added border-radius */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Allow padding to apply */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.ready-to-transform-section .btn:hover {
+    background: #d4f4dd; /* Light green on hover */
+    opacity: 1; /* Reset default opacity */
+    color: #1a5d3f;
+    transform: translateY(-3px); /* Add slight lift on hover */
+}
+
+/* -----------------------------------
+    BACK TO HOME
+----------------------------------- */
+.back-home-row {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* This styles the link like a button */
+.back-home {
+    display: inline-block; /* Required for padding */
+    padding: 0.8rem 1.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    
+    /* Styles to match your .btn.secondary */
+    background: white;
+    border: 2px solid #00b974;
+    color: #00b974;
+    transition: all 0.3s ease;
+}
+
+.back-home:hover {
+    background: #f4fdf9; /* Light green background on hover */
+    opacity: 1; /* Reset default opacity */
+}
+ 
+
+@media(max-width: 700px) {
+    .hero {
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+    .hero-stats {
+        justify-content: center;
+    }
+    .download {
+        text-align: center;
+        justify-content: center;
+    }
+    .download-inner {
+        flex-direction: column; /* Stack download section on mobile */
+    }
+}
+
+@media (max-width: 600px) {
+    /* Hero */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    /* Headings */
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .ready-to-transform-section h2,
+    .how-it-works-section h2 {
+        font-size: 2rem;
+    }
+
+    /* Hide shapes on mobile for performance */
+    .section-shape,
+    .bg-circle {
+        display: none;
+    }
+}
+
+/* -----------------------------------
+    FIXES
+----------------------------------- */
+/* FIX: Add clean spacing between FAQ and Farmers Say */
+.accordion {
+    margin-top: 60px !important;
+    margin-bottom: 70px !important;
+}
+
+/* FIX: Testimonials spacing */
+.testimonials {
+    margin-top: 160px !important;
+}
+
+/* FIX: Success story slider spacing */
+.slider {
+    margin-top: 100px !important;
+    margin-bottom: 60px !important;
+}
+
+/* FIX: FAQ items looking messy */
+.acc-item {
+    padding: 1.3rem;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+/* FIX: FAQ title alignment */
+.acc-head h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* FIX: FAQ answer spacing */
+.acc-body {
+    margin-top: 10px;
+    line-height: 1.5;
+}

@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupiya — Residue-Free Farming</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+        .services-explained-section {
+            padding: 80px 20px;
+            background-color: #f9f9f9; /* Light grey background to stand out */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-explained-section h2 {
+            font-size: 2.5rem; /* 40px */
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .services-explained-section .section-subtitle {
+            font-size: 1.125rem; /* 18px */
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            /* Creates a responsive grid: 3 columns on large screens, 2 on medium, 1 on small */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card .service-image {
+            width: 70px; 
+            height: 70px;
+            object-fit: contain; 
+            margin-bottom: 20px;
+            display: block; 
+            margin-left: 0; 
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem; 
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 1rem; 
+            color: #555;
+            line-height: 1.6;
+            flex-grow: 1; 
+        }
+    </style>
+    </head>
+
+<body>
+    
+    <header class="navbar">
+        <div class="nav-container">
+            <img src="https://rupiya.app/wp-content/uploads/2025/02/Asset-1-1-2048x552.png.webp" alt="Rupiya Logo" class="logo">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="vision.html">Vision</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Smarter Farming. Better Income.</h1>
+            <p>AI-powered crop insights, traceability and carbon credits — all in one simple platform.</p>
+            <a href="contact.html" class="btn hero-btn">Get Started</a>
+        </div>
+
+        <div class="floating-icons">
+            <img src="assets/leaf.jpeg" class="float-item f1" alt="Leaf icon">
+            <img src="assets/tractor.jpeg" class="float-item f2" alt="Tractor icon">
+            <img src="assets/carbon.jpeg" class="float-item f3" alt="Carbon icon">
+            <img src="assets/soil.jpeg" class="float-item f4" alt="Soil icon">
+        </div>
+    </section>
+
+    <section class="flow-section">
+    <div class="section-shape shape1"></div>
+    <div class="section-shape shape2"></div>
+
+    <h2 class="section-title">Our End-to-End Smart Farming Workflow</h2>
+    
+    <div class="flow-container">
+        
+        <div class="flow-top-row">
+            <div class="flow-card">
+                <img src="assets/soil.jpeg" class="flow-icon" alt="Soil test icon">
+                <h3>Satellite Soil Test</h3>
+                <p>High-accuracy soil mapping using spectral imaging.</p>
+            </div>
+            <div class="flow-arrow">➜</div>
+            <div class="flow-card">
+                <img src="assets/ai-crop.jpeg" class="flow-icon" alt="AI crop icon">
+                <h3>AI Crop Monitoring</h3>
+                <p>NDVI, pest detection and growth stage tracking.</p>
+            </div>
+            <div class="flow-arrow">➜</div>
+            <div class="flow-card">
+                <img src="assets/residue.jpeg" class="flow-icon" alt="Advisory icon">
+                <h3>Advisory & Inputs</h3>
+                <p>Smart recommendations + residue-free input suite.</p>
+            </div>
+        </div>
+        
+        <div class="flow-card flow-card-bottom">
+            <img src="assets/carbon.jpeg" class="flow-icon" alt="Carbon icon">
+            <h3>Traceability & Carbon</h3>
+            <p>Verified carbon credits + crop buy-back program.</p>
+        </div>
+        </div>
+</section>
+
+    <section class="services-explained-section">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+
+        <div class="container">
+            <h2>Our Complete Residue-Free Farming Solution</h2>
+            <p class="section-subtitle">
+                We provide farmers with a complete, end-to-end package of technology, inputs, and support to guarantee successful residue-free farming, increase income, and ensure a sustainable livelihood.
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="assets/satellite.jpeg" alt="Satellite Soil Testing" class="service-image">
+                    <h3>Satellite-Based Soil Testing</h3>
+                    <p>We use advanced satellite imagery to analyze your soil's health (N, P, K, Organic Carbon, etc.) without taking a single physical sample. This gives us precise data to create a custom nutrition plan for your farm.</p>
+                </div>
+                
+                <div class="service-card">
+                    <img src="assets/aicrop.jpeg" alt="AI Crop Monitoring" class="service-image">
+                    <h3>AI-Driven Crop Monitoring</h3>
+                    <p>Our AI platform watches your crops from space, tracking health, spotting pests or diseases early, and providing real-time alerts. This also creates a tamper-proof record for 100% traceability from seed to sale.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="assets/expert.jpeg" alt="Agronomical Advisory" class="service-image">
+                    <h3>Expert Agronomical Advisory</h3>
+                    <p>Get a personal crop calendar and daily advice through our mobile app. Plus, our on-ground team of expert agronomists visits your farm regularly to provide hands-on guidance and support.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="assets/residue.jpeg" alt="Residue-Free Inputs" class="service-image">
+                    <h3>35 Residue-Free Inputs</h3>
+                    <p>We provide a complete range of 35 high-quality, tested, and certified agriculture inputs. This includes bio-fertilizers, soil enrichers, and pest control solutions that ensure your crop is 100% residue-free.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="assets/insurance.jpeg" alt="Parametric Insurance" class="service-image">
+                    <h3>Parametric Insurance</h3>
+                    <p>Get automatic protection against risks beyond your control. Our insurance covers excess rain, low/high humidity, temperature shocks, and even wildlife damage, with fast, automated payouts.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="assets/credit.jpeg" alt="Farm Credit Support" class="service-image">
+                    <h3>Farm Credit Support</h3>
+                    <p>We help you get the working capital you need. Our platform provides access to fair and fast farm credit, so you can easily purchase inputs and manage your cash flow without stress.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="assets/buy-back.png" alt="Produce Buy-Back" class="service-image">
+                    <h3>Guaranteed Produce Buy-Back</h3>
+                    <p>We eliminate the middlemen. We commit to buying your entire qualified residue-free harvest directly from your farm gate at a pre-agreed, premium price, ensuring you get the full value for your hard work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="stats">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <h3>50,000+ Farmers</h3>
+                <p>Expanding across 5,00,000 hectares in 3 years.</p>
+            </div>
+            <div class="stat-box">
+                <h3>₹800 / Carbon Credit</h3>
+                <p>Guaranteed additional verified income.</p>
+            </div>
+            <div class="stat-box">
+                <h3>35 Inputs</h3>
+                <p>Complete residue-free input solution.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="carbon-deep-dive-section">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+        <div class="container">
+            <h2>Earn Additional Income with Carbon Credits</h2>
+            <p class="section-subtitle">
+                A simple guide for our farmers on how your hard work improves the soil and pays you extra.
+            </p>
+
+            <div class="carbon-content-wrapper">
+                <div class="carbon-explanation">
+                    <h3>1. What is a Carbon Credit?</h3>
+                    <p>Think of it as a **certificate for storing pollution**. When you farm in a way that pulls carbon dioxide (a pollutant) out of the air and traps it in your soil, you earn one "Carbon Credit" for every tonne of CO2 you store.</p>
+                    <p>Companies that create pollution buy this credit from you to balance out their impact. **You get paid for cleaning the air and making your soil healthier.**</p>
+
+                    <h3>2. How Your Farming Generates Credits</h3>
+                    <p>Regenerative (or residue-free) farming is all about building healthy, living soil. When you use practices like **no-till farming**, planting **cover crops**, and using our **residue-free bio-inputs** (instead of chemical fertilizers), you are feeding the soil. This process of trapping carbon in the soil is called "carbon sequestration."</p>
+
+                    <h3>3. How We Build "Soil Organic Carbon" (SOC)</h3>
+                    <p>Healthy soil is like a giant sponge for carbon. Plant roots and microorganisms take carbon from the air (through photosynthesis) and store it deep in the soil as stable "organic matter." The more organic matter, the higher your Soil Organic Carbon (SOC), the healthier your soil, and the more carbon credits you can earn.</p>
+                    
+                    <div class="soc-diagram-buttons">
+                        <button class="soc-button">
+                            <i class="fas fa-cloud"></i> Step 1: CO2 in Air
+                        </button>
+                        <i class="fas fa-arrow-right soc-arrow"></i>
+                        <button class="soc-button">
+                            <i class="fas fa-seedling"></i> Step 2: Plant Absorbs CO2
+                        </button>
+                        <i class="fas fa-arrow-right soc-arrow"></i>
+                        <button class="soc-button">
+                            <i class="fas fa-soil"></i> Step 3: Carbon Stored in Soil
+                        </button>
+
+                        <div class="soc-know-more-btn">
+                            <a href="carbon.html">
+                                Know More <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carbon-visual-data">
+                    <div class="carbon-stat-card">
+                        <i class="fas fa-wallet"></i>
+                        <h4>Your Guaranteed Income</h4>
+                        <div class="stat-value">₹800</div>
+                        <p>For <strong>every single verified carbon credit</strong> your farm generates, you receive ₹800 in additional, direct income.</p>
+                    </div>
+
+                    <div class="carbon-stat-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Our Exclusive Partnership</h4>
+                        <p>We have an exclusive partnership with <strong>Carboneg (Europe)</strong>. They are global experts who verify every credit to the highest international standards, ensuring you get the best price from buyers.</p>
+                        <img src="assets/partner-logos-placeholder.png" alt="Rupiya and Carboneg Logos" class="partner-logos">
+                    </div>
+
+                    <div class="carbon-stat-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Our 3-Year Commitment</h4>
+                        <p>We are dedicated to training and onboarding:</p>
+                        <ul>
+                            <li><strong>50,000+</strong> Farmers</li>
+                            <li><strong>5,00,000</strong> Hectares</li>
+                        </ul>
+                        <p>...into our carbon farming program.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="finance-section">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+
+        <div class="container">
+            <h2>Building India’s Rural Financial Ecosystem</h2>
+            <p class="finance-sub">
+                Rupiya is expanding beyond agriculture to become a complete financial platform
+                for rural India — enabling secure payments, micro-savings, insurance, credit
+                and travel services.
+            </p>
+            <div class="finance-grid">
+                <div class="fin-card">
+                    <img src="assets/recharge and bil payment.jpeg" alt="Recharge & Bill Payments">
+                    <h3>Recharge & Bill Payments</h3>
+                    <p>Fast and secure rural payment services.</p>
+                </div>
+                <div class="fin-card">
+                    <img src="assets/digital gold.jpeg" alt="Digital Gold">
+                    <h3>Digital Gold</h3>
+                    <p>Safe micro-savings for every family.</p>
+                </div>
+                <div class="fin-card">
+                    <img src="assets/travel.jpeg" alt="Travel Bookings">
+                    <h3>Travel Bookings</h3>
+                    <p>Bus, train and travel services for villages.</p>
+                </div>
+                <div class="fin-card">
+                    <img src="assets/insurance.jpeg" alt="Insurance">
+                    <h3>Insurance</h3>
+                    <p>Crop, health and livestock insurance.</p>
+                </div>
+                <div class="fin-card">
+                    <img src="assets/credit-access.jpeg" alt="Credit Access">
+                    <h3>Credit Access</h3>
+                    <p>Instant credit for small and marginal farmers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="audience-section">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+
+        <div class="container">
+            <h2>Designed for Every Stakeholder</h2>
+            <div class="audience-grid">
+                <a href="farmers.html" class="aud-card">
+                    <h3>Farmers</h3>
+                    <p>Residue-free farming, inputs, advisory & carbon income.</p>
+                </a>
+                <a href="fpos.html" class="aud-card">
+                    <h3>FPOs</h3>
+                    <p>Training, carbon credits, buy-back & supply chain support.</p>
+                </a>
+                <a href="buyers.html" class="aud-card">
+                    <h3>Institutional Buyers</h3>
+                    <p>Certified, residue-free, traceable produce at scale.</p>
+                </a>
+                <a href="investors.html" class="aud-card">
+                    <h3>Investors & Carbon Buyers</h3>
+                    <p>Impact metrics, carbon projects & verified climate outcomes.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-cards">
+                    <div class="card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Call Us</h4>
+                        <p>+91 12345 67890</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>info@rupiya.com</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Surat, India</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <div id="soil-input-modal" class="modal-overlay">
+        <div class="soil-modal-content">
+            <h4>Soil Test Data Entry</h4>
+            <p>Please enter your latest soil test results (Simulated).</p>
+            <label for="soil-ph">pH (e.g., 6.8)</label>
+            <input type="number" step="0.1" id="soil-ph" value="6.8" min="3" max="10">
+
+            <label for="soil-n">Nitrogen (N, kg/ha)</label>
+            <input type="number" id="soil-n" value="120" min="0" max="300">
+
+            <label for="soil-p">Phosphorus (P, kg/ha)</label>
+            <input type="number" id="soil-p" value="25" min="0" max="100">
+            
+            <label for="soil-k">Potassium (K, kg/ha)</label>
+            <input type="number" id="soil-k" value="150" min="0" max="300">
+
+            <div class="soil-modal-actions">
+                <button id="soil-submit">Submit Analysis</button>
+                <button id="soil-cancel" class="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="chat-fab" >
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <div id="chat-modal">
+        <div class="chat-header">
+            <h3>AI Sahayak (Assistant)</h3>
+            <button id="chat-close-btn">&times;</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-bubble bot">
+                Namaste! How can I help you today? (Try the microphone!)
+            </div>
+        </div>
+        
+       <div class="chat-input">
+            
+            <button id="chat-soil-btn" title="Soil Test Data Entry"><i class="fas fa-flask"></i></button>
+            
+            <input type="text" id="chat-text-input" placeholder="Type or say something...">
+<!--             ... -->
+            
+            <div class="input-buttons">
+                
+                <button id="chat-image-btn" title="Upload Crop Image"><i class="fas fa-camera"></i></button>
+                
+                <input type="file" id="chat-file-input" accept="image/*" style="display: none;">
+
+                <button id="chat-mic-btn" title="Voice Input"><i class="fas fa-microphone"></i></button>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="site-footer">
+        <div class="section-shape shape1"></div>
+        <div class="section-shape shape2"></div>
+        <div class="section-shape shape3"></div>
+
+        <div class="container footer-wrapper">
+            <div class="footer-brand">
+                <h2>Rupiya</h2>
+                <p>Residue-Free Farming for a Better Tomorrow</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#farmers">Farmers</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Subscribe</h4>
+                <p>Get the latest updates on residue-free farming</p>
+                <form>
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rupiya. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<script src="index.js"></script>
+</body>
+</html>
