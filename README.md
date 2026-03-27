@@ -1,17 +1,30 @@
-# 🔄 Repo-Reboot
+# 🔄 Repo-Reboot: Resurrecting Legacy Code
 
-**Repo-Reboot** is an intelligent repository revitalization tool developed for the **iFest (DA-IICT) Hackathon**. It simplifies the developer onboarding process by automatically analyzing, documenting, and optimizing legacy or unmaintained codebases.
+**Repo-Reboot** is a specialized developer tool built for the **iFest (DA-IICT) Hackathon**. It is designed to breathe new life into stale, unmaintained, or legacy repositories by automating documentation, analyzing technical debt, and optimizing project structures.
 
 ---
 
-## 📖 Project Overview
-The "Repo Reboot" challenge at iFest required a solution to handle technical debt. This platform acts as a bridge for developers, transforming a "stale" repository into a clean, well-documented project with actionable insights.
+## ⚠️ The Problem: "Code Decay"
+In the fast-paced world of software development, thousands of repositories become "stale" every day. New contributors face significant barriers:
+* **Missing Documentation:** No README or outdated setup instructions.
+* **Technical Debt:** Outdated dependencies and deprecated syntax.
+* **Onboarding Friction:** High "time-to-first-commit" because the project structure is confusing.
+* **Dependency Hell:** No clear view of what libraries are being used or if they are secure.
 
-### 🚀 Key Features
-* **Automated README Engine:** Generates structured documentation by parsing project files.
-* **Tech Stack Auditor:** Identifies languages, frameworks, and outdated dependencies instantly.
-* **Structure Visualization:** Maps out the project directory to help new contributors navigate the codebase.
-* **Refactor Suggestions:** Flags complex functions and suggests modern syntax improvements.
+## ✅ The Solution: Repo-Reboot
+I developed **Repo-Reboot** to act as an "Automated Repository Architect." It provides a 48-hour solution to revive any project:
+* **Instant Intelligence:** Automatically identifies the tech stack, languages, and core dependencies without manual input.
+* **Documentation-as-a-Service:** Generates a professional, structured README based on real-time file analysis.
+* **Visual Onboarding:** Maps the project architecture so a new developer can understand the folder structure in seconds.
+* **Actionable Modernization:** Suggests modern alternatives for outdated packages, reducing technical debt instantly.
+
+---
+
+## ✨ Key Features
+* **Smart Analysis Engine:** Scans repository patterns to determine project purpose.
+* **Tech Stack Auditor:** Detects Frameworks (React, Vue), Languages (JS, Python), and Tools.
+* **Clean Code Bridge:** Transforms a "messy" repo into a production-ready, organized state.
+* **Seamless Integration:** Built to work directly with the GitHub REST API for real-time repo fetching.
 
 ---
 
@@ -22,7 +35,7 @@ The "Repo Reboot" challenge at iFest required a solution to handle technical deb
 | **Frontend** | React.js (Vite) |
 | **Styling** | Tailwind CSS / Framer Motion |
 | **API Integration** | GitHub REST API |
-| **Analysis** | Node.js File System (FS) Parsing Logic |
+| **Analysis** | Node.js / Custom Parsing Algorithms |
 | **Deployment** | Vercel |
 
 ---
@@ -31,8 +44,8 @@ The "Repo Reboot" challenge at iFest required a solution to handle technical deb
 ```text
 repo-reboot/
 ├── src/
-│   ├── components/       # Dashboard, Analysis Cards, Repo Search
-│   ├── hooks/            # GitHub API Fetching & Rate Limit handling
-│   ├── utils/            # Logic for parsing file extensions & Readme generation
-│   └── views/            # Landing Page & Result Visualization
-└── public/               # Icon assets and Hackathon branding
+│   ├── components/       # Analysis Bars, Repo Cards, Dashboard
+│   ├── hooks/            # GitHub API & Auth logic
+│   ├── utils/            # The "Reboot Engine": File parsing & Readme logic
+│   └── views/            # Results Visualization & Landing Page
+└── public/               # Static assets & Branding
